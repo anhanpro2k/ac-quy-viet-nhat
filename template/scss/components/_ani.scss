@@ -1,0 +1,139 @@
+.textAnimation {
+    padding: 10rem 0;
+}
+.txt-ani {
+    display: block;
+    &.ani-opa {
+      .txt-ani-item {
+        > p {
+          .letter {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    &.ani-up {
+      .txt-ani-item {
+        > p {
+          .letter {
+            @include hidden(0, 50%);
+          }
+        }
+      }
+    }
+    &.ani-down {
+      .txt-ani-item {
+        > p {
+          .letter {
+            @include hidden(0, -50%);
+          }
+        }
+      }
+    }
+    &.ani-left {
+      .txt-ani-item {
+        > p {
+          .letter {
+            @include hidden(-2rem, 0);
+          }
+        }
+      }
+    }
+    &.ani-right {
+      .txt-ani-item {
+        > p {
+          .letter {
+            @include hidden(2rem, 0);
+          }
+        }
+      }
+    }
+    &-item {
+      display: inline-block;
+      > p {
+        display: inline-flex;
+        > span {
+          display: inline-block;
+          overflow: hidden;
+        }
+        .letter {
+          @include transition(0.6s, ease);
+          display: inline-block;
+          pointer-events: none;
+          &.run {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translate(0, 0) !important;
+          }
+        }
+      }
+    }
+    &.ani-none-hidden {
+      .txt-ani-item {
+        > p {
+          > span {
+            overflow: visible !important;
+          }
+        }
+      }
+    }
+    &.animated {
+      &.ani-right {
+        .letter {
+          animation: txtAnimatedRight 0.3s ease-in-out infinite;
+          opacity: initial !important;
+          visibility: initial !important;
+          transform: initial !important;
+        }
+      }
+    }
+  }
+  
+  @keyframes txtAnimatedRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .txt-ani-second {
+    display: block;
+    overflow: hidden;
+    &.ani-up {
+      .txt-ani-second-item {
+        @include hidden(0, 50%);
+      }
+    }
+    &.ani-down {
+      .txt-ani-second-item {
+        @include hidden(0, -50%);
+      }
+    }
+    &.ani-left {
+      .txt-ani-second-item {
+        @include hidden(-100%, 0);
+      }
+    }
+    &.ani-right {
+      .txt-ani-second-item {
+        @include hidden(100%, 0);
+      }
+    }
+    &-item {
+      display: inline-block;
+      @include transition(1s, ease, 0.1s);
+      &.run {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(0, 0) !important;
+      }
+    }
+    &.ani-none-hidden {
+      overflow: initial;
+    }
+  }
+  

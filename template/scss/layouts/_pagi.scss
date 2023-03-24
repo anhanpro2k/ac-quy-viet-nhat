@@ -1,0 +1,83 @@
+.page-numbers {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+
+    &.f-start {
+        justify-content: flex-start;
+        @include max($mobile) {
+            justify-content: center;
+        }
+    }
+
+    &.f-end {
+        justify-content: flex-end;
+    }
+
+    >li {
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+
+        &>.page-numbers {
+            color: $color-pri;
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius: 100rem;
+            @include mid-flex;
+            // background-color: #EAEAF2;
+            cursor: pointer;
+            transition: 0.1s ease-in;
+            @include fz-14;
+            font-weight: 300;
+            @include max($mobile) {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.2rem;
+            }
+
+            @include min($res-mobile-min) {
+                &:hover {
+                    color: $color-text;
+                    background-color: #E6E6E6;
+
+                    &.prev,
+                    &.next {
+                        color: $color-white;
+                        background-color: $color-pri;
+                        transform: translateY(0rem);
+
+                        img {
+                            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(314deg) brightness(104%) contrast(101%);
+                        }
+                    }
+                }
+            }
+
+            &.current {
+                pointer-events: none;
+                color: $color-white;
+                background-color: $color-pri;
+
+                &.prev,
+                &.next {
+                    color: $color-white;
+                    background-color: $color-pri;
+
+                    img {
+                        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(314deg) brightness(104%) contrast(101%);
+                    }
+                }
+            }
+
+            &.dot {
+                pointer-events: none;
+            }
+
+            .icon {
+                font-weight: 400;
+            }
+        }
+    }
+}

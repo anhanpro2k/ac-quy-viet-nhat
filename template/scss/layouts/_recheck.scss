@@ -1,0 +1,32 @@
+.recheck {
+    &-item {
+        @include flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &-input:checked~.recheck-dot::before {
+        opacity: 1;
+    }
+    &-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 100rem;
+        background-color: #f8f8f8;
+        border: 1px solid $color-border;
+        position: relative;
+        flex-shrink: 0;
+        &::before {
+            content: "";
+            @include mid;
+            width: 16px;
+            height: 16px;
+            border-radius: 100rem;
+            background-color: $color-second;
+            transition: 0.1s ease-in-out;
+            opacity: 0;
+        }
+    }
+    &-text {
+        margin-left: 8px;
+    }
+}

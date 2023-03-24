@@ -1,0 +1,180 @@
+.c-pri {
+    color: $color-pri;
+}
+
+.c-second {
+    color: $color-second;
+}
+
+.c-third {
+    color: $color-third;
+}
+
+.c-four {
+    color: $color-four;
+}
+
+.c-five {
+    color: $color-five;
+}
+
+.c-white {
+    color: white;
+}
+
+.c-black {
+    color: $color-black;
+}
+
+.bc-pri {
+    background-color: $color-pri;
+}
+
+.bc-second {
+    background-color: $color-second;
+}
+
+.bc-third {
+    background-color: $color-third;
+}
+
+.bc-four {
+    background-color: $color-four;
+}
+
+.bc-five {
+    background-color: $color-five;
+}
+
+.over-hd {
+    overflow: hidden;
+}
+
+.z-i-1 {
+    z-index: 1;
+}
+
+.z-i-2 {
+    z-index: 2;
+}
+
+.z-i-3 {
+    z-index: 3;
+}
+
+.z-i-4 {
+    z-index: 4;
+}
+
+.z-i-5 {
+    z-index: 5;
+}
+
+.swiper-pagination {
+    position: static;
+    &-bullet {
+        background-color: white;
+        border: 1px solid $color-border;
+        opacity: 1;
+        &-active {
+            background-color: $color-pri;
+        }
+    }
+}
+
+.swiper-prev,
+.swiper-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 100rem;
+    background-color: #f8f8f8;
+    border: 1px solid $color-border;
+    @include mid-flex;
+    .icon {
+        color: $color-pri;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+.m-mid {
+    margin: 0 auto;
+}
+
+.m-end {
+    margin-left: auto;
+}
+
+.m-start {
+    margin-right: auto;
+}
+
+.f-mid {
+    @include mid-flex;
+}
+
+.f-end {
+    @include flex;
+    justify-content: flex-end;
+}
+
+.fl {
+    @include flex;
+}
+
+.fl-center {
+    @include flex;
+    align-items: center;
+}
+
+.f-space {
+    @include flex;
+    justify-content: space-between;
+}
+
+.icon-left {
+    margin-right: 8px;
+}
+
+.icon-right {
+    margin-left: 8px;
+}
+
+.spc {
+    &.no-wrap {
+        .spc-list {
+            flex-wrap: nowrap;
+        }
+    }
+    &-list {
+        @include flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin-left: -8px;
+        margin-bottom: -8px;
+    }
+    &-item {
+        margin-left: 8px;
+        margin-bottom: 8px;
+    }
+    &-16 {
+        .spc-list {
+            margin-left: -16px;
+            margin-bottom: -16px;
+        }
+        .spc-item {
+            margin-bottom: 16px;
+            margin-left: 16px;
+        }
+    }
+    &-24 {
+        .spc-list {
+            margin-left: -24px;
+            margin-bottom: -24px;
+        }
+        .spc-item {
+            margin-bottom: 24px;
+            margin-left: 24px;
+        }
+    }
+}

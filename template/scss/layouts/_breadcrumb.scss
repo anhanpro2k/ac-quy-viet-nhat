@@ -1,0 +1,87 @@
+.breadcrumb {
+    border-radius: 0.4rem;
+    margin-top: 0.6rem;
+    
+    &-list {
+        @include flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+
+        &.white {
+            .breadcrumb-item {
+                opacity: 0.5;
+
+                &::before {
+                    color: $color-white;
+                }
+                @include hover {
+                    .breadcrumb-link {
+                        color: $color-pri;
+                    }
+                }
+                .breadcrumb-link {
+                    color: rgba(255, 255, 255, 0.95);
+                    opacity: 0.5;
+                }
+                &:last-child {
+                    .breadcrumb-link {
+                        color: $color-white;
+                        opacity: 1;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &-item {
+        position: relative;
+        @include flex;
+        align-items: center;
+
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            a {
+                color: $color-text;
+                pointer-events: none;
+                @include lc(1);
+                max-width: 30rem;
+                white-space: unset;
+
+            }
+
+            &::before {
+                color: $color-text;
+            }
+        }
+
+        &::before {
+            content: '>';
+            margin-right: 0.8rem;
+            margin-left: 0.8rem;
+        }
+
+        a {
+            color: rgba(33, 33, 33, 0.4);
+            @include fz-14;
+            transition: 0.4s;
+
+            white-space: nowrap;
+
+            @include hover {
+                color: $color-pri;
+            }
+        }
+    }
+}

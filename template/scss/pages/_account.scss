@@ -1,0 +1,322 @@
+.account {
+    &-wr {}
+
+    &-side {
+        @include max(700px) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        &-list {
+            @include max(700px) {
+                @include flex;
+                overflow-x: auto;
+                &::-webkit-scrollbar {
+                    height: 0rem;
+                }
+            }
+        }
+
+        &-item {
+            padding: 1rem 0;
+            @include flex;
+            align-items: center;
+            margin-top: 2rem;
+            position: relative;
+            width: fit-content;
+            white-space: nowrap;
+            width: 100%;
+            color: $color-text;
+            &.active {
+                &::after {
+                    opacity: 1;
+                }
+                @include max(700px) {
+                    background-color: $color-third;
+                }
+            }
+
+            @include hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                content: '';
+                height: 4rem;
+                width: 0.2rem;
+                border-radius: 100rem;
+                background-color: $color-pri;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                transition: 0.4s;
+                opacity: 0;
+            }
+
+            .icon {
+                width: 2.4rem;
+                height: 2.4rem;
+                margin-right: 1.6rem;
+                flex-shrink: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            @include max(700px) {
+                background-color: $color-pri;
+                padding: 1rem 1.2rem;
+                border-radius: 0.8rem;
+                color: $color-white;
+                .icon {
+                    img {
+                        filter: brightness(1) invert(1);
+                    }
+                }
+                +.account-side-item {
+                    margin-left: 0.8rem;
+                }
+            }
+        }
+    }
+
+    &-main {
+        @include max(700px) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        &-panel {
+            width: calc(7/8*100%);
+            margin-left: auto;
+            padding: 8rem 0;
+
+            @include max($res-mobile) {
+                width: 100%;
+                padding: 4rem 0
+            }
+            @include max(700px) {
+                padding: 0
+            }
+
+            .top {
+                @include flex;
+                align-items: center;
+                padding-bottom: 3.2rem;
+                border-bottom: 0.1rem solid #E6E6E6;
+                margin-bottom: 3.2rem;
+                .tt {
+                    font-weight: bold;
+                    @include fz-24;
+                }
+                .avatar {
+                    width: 10rem;
+                    height: 10rem;
+                    margin-right: 2.4rem;
+                    flex-shrink: 0;
+                    position: relative;
+                    @include max(600px) {
+                        width: 5rem;
+                        height: 5rem;
+                        margin-right: 0.8rem;
+                    }
+                    &::after {
+                        content: '';
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 100rem;
+                        background-color: $color-white;
+                        padding: 0.5rem;
+                        background-image: url("../assets/images/tick.svg");
+                        @include default-background;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        border: 0.2rem solid $color-white;
+                        @include max(600px) {
+                            width: 0.5rem;
+                            height: 0.5rem;
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 100rem;
+                    }
+                }
+
+                .infor {
+                    &-name {
+                        @include fz-24;
+                        font-weight: 500;
+                    }
+
+                    &-role {
+                        color: $color-sub-text;
+                    }
+                }
+
+                .link {
+                    margin-left: auto;
+                    color: #3385FF;
+                    transition: 0.4s;
+
+                    @include hover {
+                        color: $color-third;
+                    }
+                }
+            }
+            .desc {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &-title {
+        width: 100%;
+        padding: 8.2rem 6.1rem 3.2rem 0;
+        background-color: $color-pri;
+        position: relative;
+
+        @include max($res-mobile) {
+            padding: 2rem 0;
+        }
+
+        @include max(700px) {
+            width: fit-content;
+            padding: 2rem;
+            padding-left: 0;
+        }
+
+        &::after {
+            content: '';
+            height: 100%;
+            width: calc((100vw - 115rem)/2);
+            background-color: $color-pri;
+            position: absolute;
+            left: calc((100vw - 115rem)/-2);
+            top: 0;
+
+            @include max($res-mobile) {
+                width: 1.5rem;
+                left: -1.5rem;
+            }
+        }
+    }
+    &-table {
+        table {
+            width: 100%;
+            thead {
+                @include max(900px) {
+                    display: none;
+                }
+                tr {
+                    th {
+                        text-align: left;
+                        padding: 1.4rem;
+                        background-color: rgba(0, 85, 42, 0.1);
+                        &:first-child {
+                            border-radius: 0.8rem 0 0 0.8rem;
+                        }
+                        &:last-child {
+                            text-align: right;
+                            border-radius: 0 0.8rem 0.8rem 0;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    @include max(900px) {
+                        @include flex;
+                        flex-wrap: wrap;
+                        border-bottom: 0.1rem solid $color-pri;
+                    }
+                }
+                td {
+                    text-align: left;
+                    padding: 2.4rem 1.4rem;
+                    border-bottom:0.1rem solid rgba(0, 85, 42, 0.1);
+                    &:last-child {
+                        text-align: right;
+                    }
+                    @include max(900px) {
+                        @include flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 1rem;
+                        &::before {
+                            content: attr(label);
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        .price {
+            color: $color-third;
+            font-weight: 500;
+        }
+        &-status {
+            padding: 0.7rem 1.6rem;
+            background-color: $color-four;
+            border-radius: 100rem;
+            color: $color-white;
+            @include fz-14;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            &.pending {
+                background-color:  #ff9800;
+            }
+            &.processing {
+                background-color: #2196f3;
+            }
+            &.onhold {
+                background-color: #9c27b0;
+            }
+            &.completed {
+                background-color:  $color-four;
+            }
+            &.cancelled {
+                background-color: #bdbdbd;
+            }
+            &.refunded {
+                background-color: #2196f3;
+            }
+            &.failed {
+                background-color: #2196f3;
+            }
+        }
+    }
+    &-pagi {
+        @include flex;
+        justify-content: space-between;
+        margin-top: 2.4rem;
+        &-left {
+            @include flex;
+            align-items: center;
+            .current {
+                padding: 0.4rem 1.6rem;
+                background-color: #F5F5F5;
+                border-radius: 0.4rem;
+                @include fz-14;
+            }
+            .total {
+                padding: 0.4rem 1.6rem;
+                @include fz-14;
+            }
+        }
+        &-right {
+            @include flex;
+            .btn-prev {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

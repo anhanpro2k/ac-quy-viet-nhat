@@ -1,0 +1,63 @@
+.search-mona {
+    position: relative;
+    width: 100%;
+}
+
+.search {
+    &-wrap {
+        @include flex;
+        align-items: stretch;
+        position: relative;
+    }
+
+    &-input {
+        @include font-pri;
+        outline: none;
+        border-radius: 0.4rem;
+        border: 1px solid transparent;
+        @include fz-14;
+        color: $color-text;
+        flex: 1;
+        height: 4rem;
+        padding: 1.2rem 0;
+        padding-bottom: 1.4rem;
+        background-color: $color-six;
+        padding-left: 1.6rem;
+        transition: 0.4s;
+        line-height: 1;
+        min-width: unset;
+        width: 100%;
+        &::placeholder {
+            color: #8C8C8C;
+        }
+
+        &:focus {
+            border: 1px solid $color-second;
+        }
+    }
+
+    &-btn {
+        @include mid-flex;
+        flex-shrink: 0;
+        width: 3.2rem;
+        height: 3.2rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0.4rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        display: block;
+        transition: 0.4s ease-in-out;
+        flex-shrink: 0;
+        &:hover {
+            background-color: $color-second;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            margin-top: 0.2rem;
+        }
+    }
+}

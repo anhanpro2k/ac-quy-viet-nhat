@@ -1,0 +1,94 @@
+.popup {
+    position: fixed;
+    @include full;
+    z-index: 80;
+    visibility: hidden;
+
+    &.open {
+        visibility: visible;
+        .popup-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup-main {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &-overlay {
+        position: absolute;
+        background-color: rgba($color: $color-black, $alpha: 0.8);
+        @include full;
+        z-index: 1;
+        @include transitionRe;
+        opacity: 0;
+        visibility: hidden;
+        backdrop-filter: blur(0.3rem)
+    }
+    &-main {
+        @include mid;
+        z-index: 2;
+        width: 120rem;
+        max-height: 90vh;
+        max-width: 95%;
+        @include transitionRe;
+        opacity: 0;
+        visibility: hidden;
+        position: relative;
+        background-color: $color-white;
+        border-radius: 1.6rem;
+        padding: 1rem 0;
+        &.med {
+            width: 90rem;
+        }
+        &.small  {
+            width: 80rem;
+        }
+    }
+    &-over {
+        overflow-y: auto;
+        min-height: 40vh;
+        max-height: 80vh;
+    }
+    &-wrapper {
+        width: 100%;
+        min-height: 40vh;
+        position: relative;
+        padding: 4.8rem 2rem 2rem 2rem;
+        border-radius: 6px;
+    }
+    &-title {
+        @include fz-24;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1.6rem;
+    }
+    &-close {
+        position: absolute;
+        top:1rem;
+        right:1rem;
+        cursor: pointer;
+        transition: 0.6s ease-in-out;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100rem;
+        @include mid-flex;
+        background-color: $color-pri;
+        z-index: 3;
+        &:hover {
+            .icon {
+                transform: rotate(360deg);
+            }
+        }
+        .icon {
+            color: $color-white;
+            font-weight: 300;
+            font-size: 2.4rem;
+            @include transition(0.6s, ease-in-out);
+            @include max(800px) {
+                @include fz-16;
+            }
+        }
+    }
+}

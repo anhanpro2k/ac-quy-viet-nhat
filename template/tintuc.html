@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/backdoor.css">
+    <!-- <link rel="icon" type="image/png" href="./assets/images/mona.png" /> -->
+    <title>Tin tức</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-top-wr">
+                        <div class="header-top-phone">
+                            <span class="icon">
+                                <img src="./assets/images/phone-call.svg" alt="">
+                            </span>
+                            <span class="txt">Hỗ trợ</span>
+                            <a href="" class="link">
+                                0763.100.100 - 0963 100 100
+                            </a>
+                        </div>
+                        <div class="header-top-search">
+                            <form action="">
+                                <div class="header-top-search-wr">
+                                    <button type="submit" class="icon">
+                                        <img src="./assets/images/search.svg" alt="">
+                                    </button>
+                                    <input type="text" placeholder="Tìm theo mã sản phẩm">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-top-login">
+                            <span class="avatar">
+                                <img src="./assets/images/avatar.jpg" alt="">
+                            </span>
+                            <span class="txt">
+                                Quốc Cương
+                            </span>
+                            <div class="icon">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+
+                            <div class="header-login tabJS">
+                                <div class="header-login-top">
+                                    <div class="log tabBtn">
+                                        Đăng nhập
+                                    </div>
+                                    <div class="regis tabBtn">
+                                        Đăng ký tài khoản
+                                    </div>
+                                </div>
+                                <div class="header-login-body">
+                                    <div class="header-login-form tabPanel">
+                                        <div class="contentTab">
+                                            <form action="">
+                                                <div class="header-login-wr">
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Tên tài khoản*">
+                                                    </div>
+                                                    <div class="input ">
+                                                        <input type="password" placeholder="Mật khẩu*">
+                                                        <i class="seepassJS fas fa-eye"></i>
+                                                    </div>
+                                                    <button type="submit" class="btn-pri">
+                                                        <span class="txt">Đăng nhập</span>
+                                                    </button>
+                                                    <a href="" class="txt">Quên mật khẩu?</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="header-regis-form tabPanel">
+                                        <div class="contentTab">
+                                            <form action="">
+                                                <div class="header-login-wr">
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Tên tài khoản*">
+                                                    </div>
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Số điện thoại *">
+                                                    </div>
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Email *">
+                                                    </div>
+                                                    <div class="input">
+                                                        <input type="password" placeholder="Mật khẩu *">
+                                                        <i class="seepassJS fas fa-eye"></i>
+                                                    </div>
+                                                    <p class="header-login-note">
+                                                        <span class="text">Mật khẩu 8 chữ </span>
+                                                        <span class="text">Mật khẩu viết hoa </span>
+                                                        <span class="text">Mật khẩu 8 chữ số </span>
+                                                        <span class="text">Mật khẩu viết hoa </span>
+                                                    </p>
+                                                    <div class="input">
+                                                        <input type="password" placeholder="Nhập lại mật khẩu *">
+                                                        <i class="seepassJS fas fa-eye"></i>
+                                                    </div>
+                                                    <button type="submit" class="btn-pri">
+                                                        <span class="txt">Đăng ký</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="header-bottom-wr">
+                        <div class="header-logo">
+                            <a href="" class="custom-logo-link">
+                                <img src="./assets/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="header-burger">
+                            <div class="burger">
+                                <div class="hamburger" id="hamburger">
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <div class="icon-burger">
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                Danh mục sản phẩm
+                            </div>
+                            <div class="megas">
+                                <div class="megas-overlay"></div>
+                                <div class="megas-inner">
+                                    <div class="container">
+                                        <div class="megas-wr">
+                                            <div class="megas-left">
+                                                <ul class="menu-list">
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy theo thương hiệu</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy oto</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy xe tải</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy xe máy</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy xe điện</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Ắc quy công nghiệp</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Máy sạc ác quy</a>
+                                                    </li>
+                                                    <li class="menu-item megas-menu-item">
+                                                        <a href="" class="menu-link">Phụ kiện ác quy</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megas-right">
+                                                <div class="megas-menu">
+                                                    <div class="megas-menu-row brand row">
+                                                        <div class="megas-menu-col col">
+                                                            <div class="brand-item">
+                                                                <a href="" class="inner">
+                                                                    <img src="./assets/images/br1.png" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="megas-menu-col col">
+                                                            <div class="brand-item">
+                                                                <a href="" class="inner">
+                                                                    <img src="./assets/images/br2.png" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="megas-menu-col col">
+                                                            <div class="brand-item">
+                                                                <a href="" class="inner">
+                                                                    <img src="./assets/images/br3.png" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="megas-menu-col col">
+                                                            <div class="brand-item">
+                                                                <a href="" class="inner">
+                                                                    <img src="./assets/images/br4.png" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="megas-menu">
+                                                    <div class="megas-menu-row row">
+                                                        <div class="megas-menu-col col">
+                                                            <ul class="menu-list">
+                                                                <p class="tt">
+                                                                    Thương hiệu
+                                                                </p>
+                                                                <li class="menu-item current-menu-item">
+                                                                    <a href="" class="menu-link">HONDA</a>
+                                                                    <ul class="menu-list">
+                                                                        <p class="tt">
+                                                                            Dòng xe
+                                                                        </p>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                CIVIC
+                                                                            </a>
+                                                                            <ul class="menu-list">
+                                                                                <p class="tt">
+                                                                                    Đời xe
+                                                                                </p>
+                                                                                <li class="menu-item">
+                                                                                    <a href="" class="menu-link">
+                                                                                        CIVIC 2012
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="menu-item">
+                                                                                    <a href="" class="menu-link">
+                                                                                        CIVIC 2013
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="menu-item">
+                                                                                    <a href="" class="menu-link">
+                                                                                        CIVIC 2014
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="menu-item">
+                                                                                    <a href="" class="menu-link">
+                                                                                        CIVIC 2015
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                CITY
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                JAZZ
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                ACCORD
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                CRV
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                CRV 2.0
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                HR-V
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                FIT
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="menu-item">
+                                                                            <a href="" class="menu-link">
+                                                                                ODYSSEY
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">TOYOTA</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">HUYNDAI</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">KIA</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">CHEVROLET</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">HUYNDAI</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">NISSAN</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">MITSUBISHI</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">VINFAST</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">MAZDA</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">SUZUKI</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">AUDI</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">ACURA</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">FORD</a>
+                                                                </li>
+                                                                <li class="menu-item">
+                                                                    <a href="" class="menu-link">SUBARU</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-nav">
+                            <div class="menu-nav">
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <a href="" class="menu-link">
+                                            Trang Chủ
+                                        </a>
+                                    </li>
+                                    <li class="menu-item dropdown">
+                                        <a href="" class="menu-link">
+                                            Ắc Quy</a>
+                                        <ul class="menu-list">
+                                            <li class="menu-item dropdown">
+                                                <a href="" class="menu-link">Sản phẩm demo </a>
+                                                <ul class="menu-list">
+                                                    <li class="menu-item">
+                                                        <a href="" class="menu-link">Sản phẩm demo <i
+                                                                class="fas fa-caret-down"></i></a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="" class="menu-link">Sản phẩm demo <i
+                                                                class="fas fa-caret-down"></i></a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="" class="menu-link">Sản phẩm demo <i
+                                                                class="fas fa-caret-down"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="" class="menu-link">Sản phẩm demo </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="" class="menu-link">Sản phẩm demo </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="" class="menu-link">Sản phẩm demo </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="" class="menu-link ">Dịch Vụ</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="" class="menu-link">
+                                            Tin Tức
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="" class="menu-link">
+                                            Chinh Sách
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="" class="menu-link">
+                                            Liên Hệ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div href="" class="header-cart">
+                            <span class="icon">
+                                <img src="./assets/images/shopping-cart.svg" alt="">
+                            </span>
+                            <span class="txt">Giỏ hàng</span>
+                            <span class="num">
+                                01
+                            </span>
+                            <div class="header-cart-box">
+                                <div class="header-cart-list">
+                                    <div class="header-cart-item">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/itemcart1.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <a href="" class="info-name">Ắc Quy Đồng Nai N50Z L
+                                                    (12V-60Ah)</a>
+                                                <p class="info-bottom">
+                                                    <span class="info-quan">SL: 01</span>
+                                                    <span class="info-price">Giá: 1,470,000 đ</span>
+                                                </p>
+                                            </div>
+                                            <span class="delete">
+                                                <img src="./assets/images/trash.svg" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart-item">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/itemcart1.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <a href="" class="info-name">Ắc Quy Đồng Nai N50Z L
+                                                    (12V-60Ah)</a>
+                                                <p class="info-bottom">
+                                                    <span class="info-quan">SL: 01</span>
+                                                    <span class="info-price">Giá: 1,470,000 đ</span>
+                                                </p>
+                                            </div>
+                                            <span class="delete">
+                                                <img src="./assets/images/trash.svg" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart-item">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/itemcart1.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <a href="" class="info-name">Ắc Quy Đồng Nai N50Z L
+                                                    (12V-60Ah)</a>
+                                                <p class="info-bottom">
+                                                    <span class="info-quan">SL: 01</span>
+                                                    <span class="info-price">Giá: 1,470,000 đ</span>
+                                                </p>
+                                            </div>
+                                            <span class="delete">
+                                                <img src="./assets/images/trash.svg" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart-item">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/itemcart1.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <a href="" class="info-name">Ắc Quy Đồng Nai N50Z L
+                                                    (12V-60Ah)</a>
+                                                <p class="info-bottom">
+                                                    <span class="info-quan">SL: 01</span>
+                                                    <span class="info-price">Giá: 1,470,000 đ</span>
+                                                </p>
+                                            </div>
+                                            <span class="delete">
+                                                <img src="./assets/images/trash.svg" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-cart-total">
+                                    <div class="top">
+                                        <span class="top-txt">
+                                            Tổng tiền:
+                                        </span>
+                                        <span class="top-price">
+                                            10,000,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="button">
+                                        <a href="" class="btn-white">
+                                            <span class="txt">Thanh toán</span>
+                                        </a>
+                                        <a href="" class="btn-third">
+                                            <span class="txt">Xem giỏ hàng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-overlay"></div>
+        <div class="mobile">
+            <div class="mobile-con">
+                <div class="mobile-wr">
+                    <div class="mobile-nav">
+                        <div class="menu-nav  menu-have-icon">
+                            <ul class="menu-list">
+                                <li class="menu-item ">
+                                    <a href="" class="menu-link">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="menu-item dropdown current_page_item">
+                                    <a href="" class="menu-link">
+                                        Service
+                                    </a>
+                                    <ul class="menu-list">
+                                        <li class="menu-item dropdown">
+                                            <a href="" class="menu-link ">
+                                                Sản phẩm pr
+                                            </a>
+                                            <ul class="menu-list">
+                                                <li class="menu-item">
+                                                    <a href="" class="menu-link">
+                                                        Sản phẩm demo
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="" class="menu-link">
+                                                        Sản phẩm demo
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="" class="menu-link">
+                                                        Sản phẩm demo
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="" class="menu-link">
+                                                        Sản phẩm demo
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item current_page_item">
+                                            <a href="" class="menu-link">
+                                                Sản phẩm demo
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-link">
+                                                Sản phẩm demo
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-link">
+                                                Sản phẩm demo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Contact
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mobile-content">
+                        <p class="mobile-title">
+                            Thông tin liên hệ
+                        </p>
+                        <div class="mobile-fl mb-16s">
+                            <span class="fw-6"> Địa chỉ: </span>
+                            <p class="mobile-text mobile-link">
+                                24A Hàm Nghi Dong Ha, Quảng Trị, Việt Nam
+                            </p>
+                        </div>
+                        <div class="mobile-fl mb-16s">
+                            <span class="fw-6">Phone:</span>
+                            <a href="" class="mobile-text mobile-link">
+                                0949 0531 23
+                            </a>
+                        </div>
+                        <div class="mobile-fl mb-16s">
+                            <span class="fw-6">Email:</span>
+                            <a href="" class="mobile-text mobile-link">
+                                thanhthuyqtkd@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mobile-mxh">
+                    <a href="" class="mobile-mxh-link">
+                        <img src="" alt="">
+                    </a>
+                    <a href="" class="mobile-mxh-link">
+                        <img src="" alt="">
+                    </a>
+                    <a href="" class="mobile-mxh-link">
+                        <img src="" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="new">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul class="breadcrumb-list">
+                        <li class="breadcrumb-item">
+                            <a href="" class="breadcrumb-link">Trang chủ</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="" class="breadcrumb-link">Tin tức</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <section class="sec-nb sec-pd">
+                <div class="new-nb">
+                    <div class="container">
+                        <div class="new-nb-wr">
+                            <h2 class="title mb4 blur load-img">
+                                Tin nổi bật
+                            </h2>
+                            <div class="new-nb-box row">
+                                <div class="new-nb-big col-6">
+                                    <div class="inner">
+                                        <div class="img">
+                                            <a href="" class="img-inner img-animated load-img">
+                                                <img src="./assets/images/ttnb1.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="info-inner">
+                                                <div class="topitem">
+                                                    <p class="by">
+                                                        Đăng bởi
+                                                        <strong>ADMIN</strong>
+                                                    </p>
+                                                    <p class="date">
+                                                        22 tháng 2, 2023
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    <a href="" class="tt">
+                                                        Tặng ngay mũ bảo hiểm thời trang cao cấp khi thay bình ắc quy
+                                                        tại VIỆT NHẬT
+                                                    </a>
+                                                </h3>
+                                                <p class="desc">
+                                                    Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                    tristique convallis. Pulvinar mattis neque orci odio ...
+                                                </p>
+                                                <a href="" class="btn-pri">
+                                                    <span class="txt">
+                                                        Đọc tiếp
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-nb-multi col-6">
+                                    <div class="new-nb-list row">
+                                        <div class="new-nb-item col">
+                                            <div class="inner">
+                                                <div class="img">
+                                                    <a href="" class="img-inner img-animated load-img">
+                                                        <img src="./assets/images/ttnb2.png" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info">
+                                                    <div class="info-inner">
+                                                        <div class="topitem">
+                                                            <p class="by">
+                                                                Đăng bởi
+                                                                <strong>ADMIN</strong>
+                                                            </p>
+                                                            <p class="date">
+                                                                22 tháng 2, 2023
+                                                            </p>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="" class="tt">
+                                                                Cách thay bình ắc quy chuẩn nhất
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="new-nb-item col">
+                                            <div class="inner">
+                                                <div class="img">
+                                                    <a href="" class="img-inner img-animated load-img">
+                                                        <img src="./assets/images/ttnb3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info">
+                                                    <div class="info-inner">
+                                                        <div class="topitem">
+                                                            <p class="by">
+                                                                Đăng bởi
+                                                                <strong>ADMIN</strong>
+                                                            </p>
+                                                            <p class="date">
+                                                                22 tháng 2, 2023
+                                                            </p>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="" class="tt">
+                                                                Cách thay bình ắc quy chuẩn nhất
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="new-nb-item col">
+                                            <div class="inner">
+                                                <div class="img">
+                                                    <a href="" class="img-inner img-animated load-img">
+                                                        <img src="./assets/images/ttnb4.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info">
+                                                    <div class="info-inner">
+                                                        <div class="topitem">
+                                                            <p class="by">
+                                                                Đăng bởi
+                                                                <strong>ADMIN</strong>
+                                                            </p>
+                                                            <p class="date">
+                                                                22 tháng 2, 2023
+                                                            </p>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="" class="tt">
+                                                                Cách thay bình ắc quy chuẩn nhất
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="new-nb-item col">
+                                            <div class="inner">
+                                                <div class="img">
+                                                    <a href="" class="img-inner img-animated load-img">
+                                                        <img src="./assets/images/ttnb5.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info">
+                                                    <div class="info-inner">
+                                                        <div class="topitem">
+                                                            <p class="by">
+                                                                Đăng bởi
+                                                                <strong>ADMIN</strong>
+                                                            </p>
+                                                            <p class="date">
+                                                                22 tháng 2, 2023
+                                                            </p>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="" class="tt">
+                                                                Cách thay bình ắc quy chuẩn nhất
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec-daily sec-pdb">
+                <div class="new-daily">
+                    <div class="container">
+                        <div class="new-daily-wr row">
+                            <div class="new-daily-main col-8">
+                                <h2 class="title blur mb4 load-img">TIN TỨC HÀNG NGÀY</h2>
+                                <div class="new-daily-list row">
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new1.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new3.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new4.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new5.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new6.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="new-daily-item col">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="" class="img-inner">
+                                                    <img src="./assets/images/new7.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="info-inner">
+                                                    <div class="topitem">
+                                                        <p class="by">
+                                                            Đăng bởi
+                                                            <strong>ADMIN</strong>
+                                                        </p>
+                                                        <p class="date">
+                                                            22 tháng 2, 2023
+                                                        </p>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="" class="tt">Tặng ngay mũ bảo hiểm thời trang cao cấp
+                                                            khi thay bình ắc quy tại VIỆT NHẬT</a>
+                                                    </h3>
+                                                    <p class="desc">
+                                                        Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                        tristique convallis. Pulvinar mattis neque orci odio ...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagimain">
+                                    <ul class="page-numbers">
+                                        <li>
+                                            <a href="" class="prev page-numbers" href=""><i
+                                                    class="fa fa-angle-left icon"></i></a>
+                                        </li>
+                                        <li>
+                                            <span class="page-numbers current">1</span>
+                                        </li>
+                                        <li>
+                                            <a href="" class="page-numbers">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="page-numbers">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="page-numbers">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="next page-numbers"><i
+                                                    class="fa fa-angle-right icon"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="new-daily-side col-4">
+                                <div class="new-daily-side-item">
+                                    <div class="newest sidebox">
+                                        <h2 class="title blur mb4 load-img">TIN MỚI NHẤT</h2>
+                                        <div class="newest-list">
+                                            <div class="newest-item">
+                                                <div class="topitem">
+                                                    <p class="by">
+                                                        Đăng bởi
+                                                        <strong>ADMIN</strong>
+                                                    </p>
+                                                    <p class="date">
+                                                        22 tháng 2, 2023
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    <a href="" class="tt">Cách thay bình ắc quy chuẩn nhất</a>
+                                                </h3>
+                                                <p class="desc">
+                                                    Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                    tristique convallis. Pulvinar mattis neque orci odio ...
+                                                </p>
+                                            </div>
+                                            <div class="newest-item">
+                                                <div class="topitem">
+                                                    <p class="by">
+                                                        Đăng bởi
+                                                        <strong>ADMIN</strong>
+                                                    </p>
+                                                    <p class="date">
+                                                        22 tháng 2, 2023
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    <a href="" class="tt">Cách thay bình ắc quy chuẩn nhất</a>
+                                                </h3>
+                                                <p class="desc">
+                                                    Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                    tristique convallis. Pulvinar mattis neque orci odio ...
+                                                </p>
+                                            </div>
+                                            <div class="newest-item">
+                                                <div class="topitem">
+                                                    <p class="by">
+                                                        Đăng bởi
+                                                        <strong>ADMIN</strong>
+                                                    </p>
+                                                    <p class="date">
+                                                        22 tháng 2, 2023
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    <a href="" class="tt">Cách thay bình ắc quy chuẩn nhất</a>
+                                                </h3>
+                                                <p class="desc">
+                                                    Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                    tristique convallis. Pulvinar mattis neque orci odio ...
+                                                </p>
+                                            </div>
+                                            <div class="newest-item">
+                                                <div class="topitem">
+                                                    <p class="by">
+                                                        Đăng bởi
+                                                        <strong>ADMIN</strong>
+                                                    </p>
+                                                    <p class="date">
+                                                        22 tháng 2, 2023
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    <a href="" class="tt">Cách thay bình ắc quy chuẩn nhất</a>
+                                                </h3>
+                                                <p class="desc">
+                                                    Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl
+                                                    tristique convallis. Pulvinar mattis neque orci odio ...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="newprod sidebox">
+                                        <h2 class="title blur mb4 load-img">SẢN PHẨM MỚI</h2>
+                                        <div class="newprod-list">
+                                            <div class="newprod-item">
+                                                <div class="inner">
+                                                    <div class="img">
+                                                        <a href="" class="img-inner">
+                                                            <img src="./assets/images/itemcart1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="info-inner">
+                                                            <h3>
+                                                                <a href="" class="tt">Ắc Quy Đồng Nai N50Z L
+                                                                    (12V-60Ah)</a>
+                                                            </h3>
+                                                            <p class="price">
+                                                                1,470,000 đ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="newprod-item">
+                                                <div class="inner">
+                                                    <div class="img">
+                                                        <a href="" class="img-inner">
+                                                            <img src="./assets/images/itemcart1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="info-inner">
+                                                            <h3>
+                                                                <a href="" class="tt">Ắc Quy Đồng Nai N50Z L
+                                                                    (12V-60Ah)</a>
+                                                            </h3>
+                                                            <p class="price">
+                                                                1,470,000 đ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="newprod-item">
+                                                <div class="inner">
+                                                    <div class="img">
+                                                        <a href="" class="img-inner">
+                                                            <img src="./assets/images/itemcart1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="info-inner">
+                                                            <h3>
+                                                                <a href="" class="tt">Ắc Quy Đồng Nai N50Z L
+                                                                    (12V-60Ah)</a>
+                                                            </h3>
+                                                            <p class="price">
+                                                                1,470,000 đ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="newprod-item">
+                                                <div class="inner">
+                                                    <div class="img">
+                                                        <a href="" class="img-inner">
+                                                            <img src="./assets/images/itemcart1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="info-inner">
+                                                            <h3>
+                                                                <a href="" class="tt">Ắc Quy Đồng Nai N50Z L
+                                                                    (12V-60Ah)</a>
+                                                            </h3>
+                                                            <p class="price">
+                                                                1,470,000 đ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="newprod-item">
+                                                <div class="inner">
+                                                    <div class="img">
+                                                        <a href="" class="img-inner">
+                                                            <img src="./assets/images/itemcart1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="info-inner">
+                                                            <h3>
+                                                                <a href="" class="tt">Ắc Quy Đồng Nai N50Z L
+                                                                    (12V-60Ah)</a>
+                                                            </h3>
+                                                            <p class="price">
+                                                                1,470,000 đ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec-policy">
+                <div class="policy sec-pd8">
+                    <div class="container">
+                        <div class="policy-wr">
+                            <h2 class="title center mb4 blur load-img">CHÍNH SÁCH BẢO HÀNH</h2>
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="policy-item">
+                                            <div class="icon">
+                                                <img src="./assets/images/iconpd.svg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="desc-txt">
+                                                    Sản phẩm
+                                                    nhập khẩu 100%
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="policy-item">
+                                            <div class="icon">
+                                                <img src="./assets/images/iconclick.svg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="desc-txt">
+                                                    Mua hàng online
+                                                    dễ dàng thanh toán
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="policy-item">
+                                            <div class="icon">
+                                                <img src="./assets/images/icondollar.svg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="desc-txt">
+                                                    1 đổi 1 với
+                                                    chính sách đổi trả
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="policy-item">
+                                            <div class="icon">
+                                                <img src="./assets/images/iconship.svg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="desc-txt">
+                                                    Giao hàng toàn quốc
+                                                    miễn phí lắp đặt
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-wr">
+                    <div class="footer-top-regis">
+                        <p class="tt">Đăng ký nhận tin</p>
+                        <p class="desc">
+                            Lorem ipsum dolor sit amet consectetur. Et lorem in nunc nisl tristique convallis. Pulvinar
+                            mattis neque orci odio ...
+                        </p>
+                    </div>
+                    <div class="footer-top-input">
+                        <form action="">
+                            <div class="footer-top-input-wr">
+                                <input type="text" placeholder="Nhập email của bạn">
+                                <button type="submit" class="icon">
+                                    <img src="./assets/images/send.svg" alt="">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wr">
+                    <div class="footer-logo">
+                        <a href="" class="custom-logo-link">
+                            <img src="./assets/images/logobig.png" alt="">
+                        </a>
+                    </div>
+                    <div class="footer-list row">
+                        <div class="footer-item col">
+                            <p class="footer-item-tt">Công ty việt nhật</p>
+                            <ul class="address">
+                                <li class="address-item">
+                                    <p class="tt">Điện thoại:</p>
+                                    <div class="address-link">
+                                        <a href="" class="address-link-item">
+                                            0763.100.100
+                                        </a>
+                                        -
+                                        <a href="" class="address-link-item">
+                                            0963 100 100
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="address-item">
+                                    <p class="tt">Địa chỉ:</p>
+                                    <p class="desc">
+                                        55 Đường số 1, KDC. Bình Hưng,
+                                        H. Bình Chánh, TP.HCM
+                                    </p>
+                                </li>
+                                <li class="address-item">
+                                    <p class="tt">Email:</p>
+                                    <a href="" class="desc">
+                                        Vietnhat100100@gmail.com
+                                    </a>
+                                </li>
+                                <li class="address-item">
+                                    <p class="tt">Giờ làm việc:</p>
+                                    <p class="desc">
+                                        T2 - CN: 7:30 Am - 17:30 PM
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-item col">
+                            <p class="footer-item-tt">Sản phẩm</p>
+                            <ul class="menu-list">
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Phụ tùng xe máy
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy Ô tô
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy xe tải
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy Ô tô nhập khẩu
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy xe điện
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy xe máy
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Ắc quy UPS
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Máy sạc
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Phụ kiện
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-item col">
+                            <p class="footer-item-tt">Chính sách</p>
+                            <ul class="menu-list">
+                                <li class="menu-item current-menu-item">
+                                    <a href="" class="menu-link">
+                                        Quy đinh đổi trả
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        hướng dẫn mua hàng
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        chính sách bảo mật
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        quy định bảo hành
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="footer-item-tt">Dịch vụ</p>
+                            <ul class="menu-list">
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Cứu hộ ắc quy
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" class="menu-link">
+                                        Lắp ráp ắc quy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-item col">
+                            <p class="footer-item-tt">Fanpage</p>
+                            <div class="footer-final">
+                                <div class="footer-iframe">
+                                    <img src="./assets/images/fbiframe.jpg" alt="">
+                                </div>
+                                <ul class="footer-social">
+                                    <li class="footer-social-item">
+                                        <a href="" class="footer-social-link">
+                                            <img src="./assets/images/fb.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="footer-social-item">
+                                        <a href="" class="footer-social-link">
+                                            <img src="./assets/images/ins.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="footer-social-item">
+                                        <a href="" class="footer-social-link">
+                                            <img src="./assets/images/twitter.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="" class="footer-note">
+                                    <img src="./assets/images/bct.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p class="txt">Thiết kế và lập trình bởi</p>
+                    <span class="icon">
+                        <img src="./assets/images/panda.png" alt="">
+                    </span>
+                    <p class="strong">MONA.Media</p>
+                    <span class="img">
+                        <img src="./assets/images/share.svg" alt="">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="back-to-top backToTop">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+    <script src="./js/library/jquery/jquery.js"></script>
+    <script src="./js/library/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/library/aos/aos.js"></script>
+    <script src="./js/library/select2/select2.min.js"></script>
+    <script src="./js/library/magnific/jquery.magnific-popup.min.js"></script>
+    <script src="./js/library/gallery/lightgallery-all.min.js"></script>
+    <script src="./js/library/jquery/jquery-migrate.js"></script>
+    <script src="./js/library/isotope/isotope.pkgd.min.js"></script>
+    <script src="./js/library/datetime/moment.min.js"></script>
+    <script src="./js/library/datetime/daterangepicker.min.js"></script>
+    <script src="./js/library/smoothscroll/SmoothScroll.min.js"></script>
+    <script src="./js/library/scrollreveal/scrollreveal.js"></script>
+    <script src="./js/library/datepicker/jquery-ui.js"></script>
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

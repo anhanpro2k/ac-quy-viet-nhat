@@ -1,0 +1,65 @@
+.banner {
+    position: relative;
+    height: calc(100vw*(460/1728));
+    min-height: 30rem;
+    overflow: hidden;
+    &.bannerlog {
+        .banner-img {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    &-content {
+        width: calc(5/12*100%);
+        @include max($res-mobile) {
+            width: 100%;
+        }
+    }
+    &-wr {
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    &-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            left: 0;
+            top: 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 2.07%, rgba(0, 0, 0, 0) 57.07%);
+            left: 0;
+            bottom: 0;
+            transition: 1s;
+            z-index: 2;
+        }
+        &.is-inview {
+            &::before {
+                height: 100%;
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: zoomIns 3s linear;
+        }
+    }
+}

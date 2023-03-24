@@ -1,0 +1,102 @@
+.burger {
+    cursor: pointer;
+    padding-left: 8px;
+    position: relative;
+
+    // @include max($res-mobile) {
+    //     margin-right: 2rem;
+    // }
+    &.no-desk {
+        @include min($res-mobile-min) {
+            display: none;
+        }
+
+        @include max($res-mobile) {
+            width: 3.3rem;
+        }
+
+        @include max($mobile) {
+            width: 5.7rem;
+
+            .line {
+                margin-left: 0;
+            }
+        }
+
+        @include max(320px) {
+            width: 3.3rem;
+
+            .line {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.icon-burger {
+    cursor: pointer;
+    padding-left: 8px;
+    position: relative;
+
+    .line {
+        width: 22px;
+        height: 2px;
+        border-radius: 4px;
+        background-color: $color-white;
+        display: block;
+        margin: 5px 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    &.active {
+        .line {
+            &:nth-child(1) {
+                width: 50%;
+            }
+            &:nth-child(2) {
+                width: 100%;
+            }
+            &:nth-child(3) {
+                width: 75%;
+            }
+        }
+    }
+}
+
+.hamburger .line {
+    width: 22px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $color-white;
+    display: block;
+    margin: 5px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    @include max($res-mobile) {
+        background-color: $color-white;
+    }
+}
+
+#hamburger.active .line:nth-child(1) {
+    width: 50%;
+    margin-right: auto;
+}
+
+#hamburger.active .line:nth-child(2) {
+    margin-right: auto;
+}
+
+#hamburger.active .line:nth-child(3) {
+    width: 75%;
+    margin-right: auto;
+}
+
+// #hamburger.active .line{
+//   -webkit-transform: rotate(30deg);
+//   -ms-transform: rotate(30deg);
+//   -o-transform: rotate(30deg);
+//   transform: rotate(30deg);
+// }

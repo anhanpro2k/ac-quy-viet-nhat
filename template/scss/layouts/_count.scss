@@ -1,0 +1,9 @@
+.count {
+    @include flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #F0F0F0;
+    border-radius: 0.4rem;
+    width: calc(142/486*100%);
+    height: 4.2rem;
+}

@@ -1,0 +1,537 @@
+/*** Import *****/
+
+@import url("404.css");
+@import url("loading-btn.css");
+@import url("loading-group.css");
+@import url("jquery-confirm.min.css");
+@import url("mona-custom-kun.css");
+
+.jc-bs3-container.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+/*** End ****/
+
+.blog-info-tag span:before {
+    content: ",";
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    height: 100%;
+    font-size: 16px;
+    width: auto;
+    padding-right: 5px;
+}
+
+.blog-info-tag span {
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.blog-info-tag span:last-child:before {
+    display: none;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    border: 0;
+    margin: 15px 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    color: #46b450;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: red;
+}
+
+.mona-error.mona-error-user-login,
+.mona-error.mona-error-user-password,
+.mona-error {
+    color: red;
+}
+
+.login-ctr.required::after {
+    content: "*";
+    color: red;
+}
+
+p.header-login-note .text.mona-error {
+    color: red;
+}
+
+p.header-login-note .text.hidden {
+    display: none;
+}
+
+.mona-notice.success {
+    color: #73a822;
+    font-size: 14px;
+    /* text-align: center; */
+    margin: 1rem 0 2rem;
+    font-weight: bold;
+}
+
+input[readonly][name="user_email"] {
+    opacity: 0.5;
+    background-color: #acacac;
+}
+
+.mona-error.mona-notice.error {
+    margin-top: 1.5rem;
+}
+
+li.form-ip-note-txt.mona-error {
+    color: red;
+}
+
+ul.mona-password,
+ul.mona-re-password {
+    display: none;
+}
+
+.mona-mess-expired {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.account-infor .account-table-status.cancelled {
+    background-color: #f44336;
+}
+
+.account-infor span.account-table-status.on-hold {
+    background-color: #9c27b0;
+}
+
+.account-infor span.account-table-status.failed {
+    background-color: grey;
+}
+
+.account-infor .account-table-status.refunded {
+    background-color: #00a86b;
+}
+
+.contact-form-wr .btn-second .txt {
+    color: #1a1a1a;
+}
+
+/* .footer-top-input span.wpcf7-not-valid-tip {
+    position: absolute;
+    top: 1.5rem;
+    right: 3.5rem;
+} */
+
+.address-link.mona-content {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#monaCartQty.number {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #ff5c33;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    border-radius: 100rem;
+    border: 0.1rem solid #ffffff;
+    color: #ffffff;
+    font-size: 1.4rem;
+    z-index: 2;
+}
+
+.woocommerce ul.cart_list li a,
+.woocommerce ul.product_list_widget li a.info-name {
+    font-weight: 400;
+}
+
+.woocommerce a.remove:hover {
+    background-color: #ffcb01;
+}
+
+.cart-empty-img {
+    width: 20rem;
+}
+
+.empty-cart-wrap.is-loading-group {
+    max-height: 80vh;
+    overflow: hidden auto;
+}
+
+.cart-mini-list.empty {
+    padding: 4rem 2rem !important;
+    min-width: 30.6rem;
+}
+
+.woocommerce-mini-cart__empty-image {
+    width: 30%;
+    height: 30%;
+    margin: auto;
+}
+
+p.woocommerce-mini-cart__empty-message {
+    text-align: center;
+}
+
+.header-cart-box::after {
+    content: "";
+    width: 2.6rem;
+    height: 2.6rem;
+    background-image: url(../images/polygon-white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: -2rem;
+    right: 9.7rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .header-cart-box::after {
+        right: 0.8rem;
+    }
+}
+
+.mona-cart-link:hover {
+    cursor: pointer;
+}
+
+#menu-policy-menu .current-menu-item a.menus-link {
+    color: #ff5c33;
+}
+
+/* td.actions {
+    display: none;
+} */
+form.checkout_coupon.woocommerce-form-coupon {
+    width: 100%;
+    /* float: right; */
+}
+
+.home-prodbox-item.big .tag .tag-item {
+    padding: 0.1rem 0.9rem 0.2rem 0.9rem;
+    border-radius: 100rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.home-prodbox-item.big .tag .tag-item:last-child {
+    margin-right: 0;
+}
+
+.home-prodbox-item.big .tag .tag-item.orange {
+    background-color: #ff5c33;
+}
+
+.home-prodbox-item.big .tag .tag-item.blue {
+    background-color: #3385ff;
+}
+
+.home-prodbox-item.big .tag .tag-item.gray {
+    background-color: #808080;
+}
+
+.woocommerce-additional-fields {
+    display: none;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    width: 100%;
+}
+
+.woocommerce-billing-fields > h3.title {
+    font-size: 3.2rem;
+    color: #020D00;
+}
+
+.woocommerce-billing-fields__field-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p#billing_first_name_field {
+    order: 1;
+}
+
+p#billing_phone_field {
+    order: 2;
+}
+
+p#billing_state_field {
+    order: 3;
+    padding-top: 2rem;
+}
+
+p#billing_city_field {
+    order: 4;
+    padding-top: 2rem;
+}
+
+p#billing_country_field {
+    order: 5;
+    padding-top: 2rem;
+}
+
+p#billing_address_1_field {
+    order: 6;
+}
+
+p#orders_comment_field {
+    order: 7;
+}
+
+textarea#orders_comment {
+    height: 15rem;
+}
+
+span.select2-selection.select2-selection--single {
+    background-color: #F5F5F5 !important;
+    border: 0.5rem solid rgb(255 255 255);
+    border-radius: 0.4rem;
+}
+
+/* input#billing_first_name, input#billing_phone,input#billing_address_1,textarea#orders_comment {
+    width: 100%;
+    padding: 3.6rem 1.2rem 1.6rem 0;
+    border-bottom: 0.1rem solid #CCCCCC !important;
+    transition: all 0.3s ease-in-out;
+} */
+.woocommerce-checkout #payment {
+    background: unset;
+}
+
+div#payment {
+    width: 68%;
+}
+
+div#payment .payment-ms-title {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    color: #1A1A1A;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    margin-top: 4.4rem;
+}
+
+input#payment_method_cod, input#payment_method_bacs {
+    position: absolute;
+}
+
+.wc_payment_method .payment_box, .wc_payment_method .payment_box {
+    display: none !important;
+    visibility: hidden;
+}
+
+.recheck-text {
+    width: 100%;
+}
+
+.form-row.place-order {
+    display: none;
+}
+
+li.wc_payment_method.payment_method_bacs.recheck-item {
+    padding-top: 2rem;
+}
+
+.wc_payment_method .recheck-input:checked ~ .recheck-text .recheck-dot::before {
+    opacity: 1;
+}
+
+label.recheck-text {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.wrapper-transfer-item.active {
+    opacity: 1;
+    z-index: 2;
+    visibility: visible;
+    display: grid;
+}
+
+.wrapper-transfer-item {
+    border: 0.1rem dashed #D9D9D9;
+    border-radius: 0.8rem;
+    padding: 3.6rem 3.6rem 1.2rem 3.6rem;
+    display: grid;
+    margin: 0 -1.2rem;
+    grid-template-columns: repeat(6, 1fr);
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    display: none;
+}
+
+.wrapper-transfer-item .recheck-item {
+    padding: 0 1.2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.recheck-item {
+    margin-bottom: 2.4rem;
+}
+
+.wrapper-transfer-item .recheck-item .image {
+    border-radius: 0.8rem;
+    border: 1px solid #E6E6E6;
+}
+
+
+/* set check */
+
+.wrapper-transfer-item input:checked ~ .image {
+    border: 0.1rem solid #00552B;
+}
+
+.woocommerce-checkout div#toc_container {
+    display: none;
+}
+
+strong.product-quantity {
+    display: none;
+}
+
+/* span.woocommerce-Price-amount.amount {
+  display: none;
+} */
+.cart_item .product-total {
+    display: none;
+}
+
+.select2-container {
+    z-index: 1 !important;
+}
+
+.sec-details .details-content.col-7 {
+    margin: 0 auto;
+}
+
+.txt.mona-name {
+    color: grey;
+}
+
+input.upload-image {
+    display: none;
+}
+
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown {
+    color: #020D00;
+}
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown.current-menu-item {
+    background-color: #00552B;
+}
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown.current-menu-item:before {
+    background-color: #00552B;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3.3rem;
+    bottom: 0;
+    right: calc(100% - 0.06rem);
+    z-index: -1;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    transition: inherit;
+    z-index: 2;
+}
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown.current-menu-item:after {
+    background-color: #00552B;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3.3rem;
+    bottom: 0;
+    left: calc(100% - 0.06rem);
+    z-index: -1;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    transition: inherit;
+    z-index: 2;
+}
+
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown > a {
+    color: white;
+}
+
+.header-nav .menu-nav .menu-item > .menu-list .menu-item.current-menu-item.submenu-item > a:after {
+    opacity: 1 !important;
+    width: 5rem !important;
+    content: "";
+    position: absolute;
+    left: 1rem;
+    bottom: 0;
+    width: 0%;
+    height: 0.4rem;
+    background-color: #FFFFF2;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: -3.8s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    opacity: 0;
+    border-radius: 100rem;
+}
+
+.header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown > a {
+    color: #020D00;
+}
+
+.header-nav .menu-item:hover > .menu-list.submenu > .menu-item.current-menu-item > a {
+    color: white;
+}
+
+/* MENU MOBILE */
+/*Active cha khi con active*/
+.mobile-nav ul.menu-list > li.menu-item.parent.current-menu-ancestor.menu-item-has-children > a {
+    color: #f37021;
+}
+
+/*Thằng cuối cùng*/
+.mobile-nav .current-menu-item.submenu-item > a {
+    color: #f37021 !important;
+}
+
+/*mấy thằng cha của nó*/
+.mobile-nav .submenu-item.menu-item-has-children.dropdown.current-menu-ancestor > a {
+    color: #f37021 !important;
+}
+
+.select-custom-main {
+    background-color: #F5F5F5 !important;
+    border: 0.5rem solid rgb(255 255 255);
+    border-radius: 0.4rem;
+}
+
+.chitiet-sanpham .product-detail .content-product .wrapper-quantity-detail .inner-detail .detail-item.recheck-item a:hover {
+    background: #00552B;
+    color: #FFFFFF;
+}

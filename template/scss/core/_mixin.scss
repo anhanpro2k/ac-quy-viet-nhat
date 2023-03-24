@@ -1,0 +1,343 @@
+@mixin mid() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+@mixin flex-st() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: stretch;
+    align-items: stretch;
+    -webkit-align-items: stretch;
+}
+
+@mixin flex-ct() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+@mixin mid-flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+@mixin mid-flex-ctn() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+}
+
+@mixin excerpt($font-size: $paragraph-font-size, $line-height: 1.4, $lines-to-show: 3, $excerpt-bg: transparent) {
+    background: $excerpt-bg;
+    display: -webkit-box;
+    font-size: 1.4;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin imgPd($ver, $hori) {
+    display: block;
+    padding-top: calc((#{$ver} / #{$hori}) * 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin imgCover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin imgContain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@mixin lc($value: 3) {
+    display: -webkit-box;
+    -webkit-line-clamp: $value;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
+
+@mixin transition($time: 0.1s, $style: ease-in-out, $delay: 0s) {
+    transition: $time $style;
+    -webkit-transition: $time $style;
+    -moz-transition: $time $style;
+    -ms-transition: $time $style;
+    -o-transition: $time $style;
+    transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -ms-transition-delay: $delay;
+    -o-transition-delay: $delay;
+}
+
+@mixin transitionRe {
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+}
+
+@mixin max($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin min($value) {
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
+
+@mixin hover($value: 1025px) {
+    &:hover {
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+}
+
+@mixin sqr($value: 4rem) {
+    width: $value;
+    height: $value;
+}
+
+@mixin cir($value: 4rem) {
+    width: $value;
+    height: $value;
+    border-radius: 999px;
+}
+
+@mixin default-background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin clear {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin scroll-hidden {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin full-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin full {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin full-second {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin hover-scale {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+@mixin posi-vertical {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin posi-horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin font-pri {
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+@mixin font-second {
+    font-family: "Playfair Display", sans-serif;
+}
+
+@mixin hidden($x: 0, $y: 0) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate($x, $y);
+}
+
+@mixin show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+}
+
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin hover-image-zoom($timing, $style: ease) {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        @include transition($timing, $style);
+    }
+
+    @include hover {
+        img {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+}
+
+@mixin hover-image-left($timing: 0.4s, $style: ease) {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        @include transition($timing, $style);
+    }
+
+    @include hover {
+        img {
+            @include transform(translate(calc(-50% + 10px), -50%));
+        }
+    }
+}
+
+@mixin icon-hover ($value, $background, $background2) {
+    margin-right: 0.8rem;
+    width: $value;
+    height: $value;
+    border-radius: 100rem;
+    background-color: $background;
+    @include mid-flex;
+    flex-shrink: 0;
+    position: relative;
+
+    img {
+        z-index: 2;
+        width: 1.6rem;
+        height: 1.6rem;
+        object-fit: contain;
+    }
+
+    &::after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        border-radius: 100rem;
+        transition: 0.4s;
+        transform: scale(0);
+        position: absolute;
+        background-color: $background2;
+    }
+}
+
+@mixin zoom($scale: 1.1) {
+    transform: translate(-50%, -50%) scale($scale);
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin non-hover {
+    @media (hover : none) {
+        @content;
+    }
+}

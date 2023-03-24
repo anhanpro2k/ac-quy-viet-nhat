@@ -1,0 +1,231 @@
+.cmt {
+    &-item {
+        margin-top: 2.4rem;
+        &-wrap {
+            @include flex;
+        }
+        >.children {
+            margin-left: 6.4rem;
+            @include max(400px) {
+                margin-left: 4.8rem;
+            }
+            >.cmt-item:not(:last-child) {
+                >.cmt-item-wrap {
+                    >.cmt-content {
+                        >.cmt-content-wrap {
+                            &::before {
+                                display: block;
+                                border-radius: 0;
+                                border: 1px solid #EBEBEB;
+                                border-top: none;
+                                border-right: none;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.has-child {
+            >.cmt-item-wrap {
+                >.cmt-content {
+                    >.cmt-content-wrap {
+                        &::before {
+                            display: block;
+                            border-radius: 0 0 0 2.4rem;
+                            border: 1px solid #EBEBEB;
+                            border-top: none;
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-ava {
+        height: 100%;
+        &-inner {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 100rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            @include max(400px) {
+                width: 4rem;
+                height: 4rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-content {
+        margin-left: 1.6rem;
+        @include max(400px) {
+            margin-left: 0.8rem;
+        }
+        &-wrap {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 4rem;
+                right: 100%;
+                top: 0.2rem;
+                bottom: -4.8rem;
+                border-radius: 0;
+                border: 1px solid #EBEBEB;
+                border-top: none;
+                border-right: none;
+                border-bottom: none;
+                display: none;
+                @include max(400px) {
+                    bottom: -4.4rem;
+                    top: 0.4rem;
+                    width: 2.8rem;
+                }
+            }
+        }
+    }
+    &-info {
+        margin-bottom: 0.8rem
+    }
+    &-head {
+        @include flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0.8rem;
+    }
+    &-name {
+        color: #1A1A1A;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-right: 0.8rem;
+    }
+    &-time {
+        font-size: 1.2rem;
+        color: #1A1A1A;
+        font-weight: 500;
+    }
+    &-des {
+        color: #1A1A1A;
+        margin: 0.8rem 0;
+        @include max(400px) {
+            font-size: 1.4rem
+        }
+    }
+    &-image {
+        &-list {
+            @include flex-st;
+            flex-wrap: wrap;
+            margin: 0 -0.5rem;
+            margin-bottom: -1rem;
+        }
+        &-item {
+            padding: 0 0.5rem;
+            margin-bottom: 1rem;
+        }
+        &-img {
+            width: 6.4rem;
+            height: 6.4rem;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            position: relative;
+            i {
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                top: -1rem;
+                right: -1rem;
+                cursor: pointer;
+                @include mid-flex;
+                z-index: 2;
+                background-color: #f8f8f8;
+                font-weight: 300;
+                border-radius: 100rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+    }
+    &-control {
+        margin-top: 1.6rem;
+        &-link {
+            color: #1A1A1A;
+            &:not(:first-child) {
+                margin-left: 1.6rem;
+            }
+        }
+    }
+    .re-form {
+        margin-top: 1.6rem;
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+    &-rate {
+        padding: 1.6rem 2.4rem;
+        border-radius: 0.8rem;
+        background-color: #F7F7F7;
+        @include max($mobile) {
+            padding: 0;
+            background-color: transparent;
+        }
+        .title {
+            color: $color-text-second;
+        }
+        &-list {
+            @include flex-st;
+            align-items: center;
+        }
+        &-item {
+            @include flex;
+            align-items: center;
+            cursor: pointer;
+            &:not(:first-child) {
+                margin-left: 1.6rem;
+                padding-left: 1.6rem;
+                border-left: 0.1rem solid #CCCCCC;
+                @include max($mobile) {
+                    margin-left: 0.8rem;
+                    padding-left: 0.8rem;
+                }
+            }
+        }
+        &-wrap {
+            position: relative;
+            @include mid-flex;
+            top: -0.1rem;
+            input:checked~.star {
+                opacity: 1;
+            }
+            input:checked~.star-opa {
+                opacity: 0;
+            }
+            img {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+            .star {
+                position: absolute;
+                @include full;
+                opacity: 0;
+            }
+        }
+        &-number {
+            color: $color-text-second;
+            font-size: 1.6rem;
+            margin-left: 0.8rem;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+    }
+}

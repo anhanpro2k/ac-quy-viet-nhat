@@ -1,0 +1,89 @@
+.pro {
+    &-list {
+        margin-bottom: -30px;
+    }
+    &-item {
+        margin-bottom: 30px;
+        &-2 {
+            width: calc(100% /2);
+        }
+        &-3 {
+            width: calc(100% /3);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-4 {
+            width: calc(100% /4);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-5 {
+            width: calc(100% /5);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+    }
+}
+
+.prose {
+    &-list {
+        margin-bottom: -30px;
+    }
+    &-item {
+        margin-bottom: 30px;
+        &-2 {
+            width: calc(100% /2);
+        }
+        &-3 {
+            width: calc(100% /3);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-4 {
+            width: calc(100% /4);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-5 {
+            width: calc(100% /5);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+    }
+}
+
+.proth {
+    &-list {
+        margin-bottom: -30px;
+    }
+    &-item {
+        margin-bottom: 30px;
+        &-2 {
+            width: calc(100% /2);
+        }
+        &-3 {
+            width: calc(100% /3);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-4 {
+            width: calc(100% /4);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+        &-5 {
+            width: calc(100% /5);
+            @include max($mobile) {
+                width: calc(100% /2);
+            }
+        }
+    }
+}

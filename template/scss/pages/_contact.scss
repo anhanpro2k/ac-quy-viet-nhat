@@ -1,0 +1,132 @@
+.contact {
+    overflow: hidden;
+    &-map {
+        height: calc(100vw*(560/1728));
+        overflow: hidden;
+        min-height: 30rem;
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+    &-wr {
+        @include flex;
+        position: relative;
+        flex-wrap: wrap;
+    }
+    &-form {
+        width: 55%;
+        padding: 10rem 12rem 6.4rem 12rem;
+        @include max(1300px) {
+            padding: 4rem;
+        }
+        @include max(1000px) {
+            width: 50%;
+            padding: 4rem 1.5rem;
+        }
+        @include max(900px) {
+            width: 100%;
+        }
+        &-wr {
+            width: 80%;
+            @include max(1000px) {
+                width: 100%;
+            }
+            .tt {
+                @include fz-24;
+                font-weight: bold;
+            }
+        }
+        &-list {
+            --gutter-x:2.4rem;
+            --gutter-y:4rem;
+        }
+        &-ip {
+            width: 100%;
+            position: relative;
+            &.per5 {
+                width: calc(100%/2);
+            }
+            &.per3 {
+                width: calc(100%/3);
+                @include max(500px) {
+                    width: 100%;
+                }
+            }
+            input, textarea {
+                width: 100%;
+                padding-bottom: 1.6rem;
+                border: none;
+                border-bottom: 0.1rem solid $color-border;
+                &:focus {
+                    border-color: $color-text;
+                }
+            }
+            textarea {
+                min-height: 10rem;
+            }
+        }
+        &-btn {
+            .btn {
+                min-width: 18rem;
+            }
+        }
+    }
+    &-img {
+        width: 60%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 38% 100%);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        @include max(1000px) {
+            clip-path: none;
+            width: 50%;
+        }
+        @include max(900px) {
+            width: 100%;
+            position: relative;
+            clip-path: inset(0 0 0);
+            padding-top: 50%;
+            img {
+                position: fixed;
+                top: 0;
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &-address {
+        @include flex;
+        margin-top: 14rem;
+        border-top: 0.1rem solid $color-border;
+        padding-top: 3.2rem;
+        @include max($res-mobile) {
+            margin-top: 4rem;
+        }
+        &-item {
+            width: calc(100%/3);
+            @include max(600px) {
+                width: 100%;
+            }
+            .tt {
+                @include fz-24;
+                font-weight: 600;
+                color: rgba(26, 26, 26, 0.5);
+            }
+            .desc {
+                word-break: break-word;
+                color: $color-text;
+                transition: 0.4s;
+                @include hover {
+                    color: $color-third;
+                }
+            }
+        }
+    }
+}

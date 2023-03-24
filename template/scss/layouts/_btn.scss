@@ -1,0 +1,412 @@
+.btn {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    padding: 1.4rem 1.6rem;
+    min-width: 10rem;
+    border-radius: 0.4rem;
+    img {
+        position: relative;
+        z-index: 3;
+        margin-left: 0.5rem;
+    }
+    .txt {
+        font-weight: 1.4rem;
+        line-height: 1.2;
+        color: $color-black;
+        transition: 0.4s;
+        @include fz-16;
+        display: block !important;
+        @include max(500px){
+            @include fz-14;
+            white-space: nowrap;
+        }
+    }
+    &.center {
+        margin: auto;
+        margin-top: 2rem;
+    }
+    &-pri {
+        @extend .btn;
+        background-color: $color-pri;
+        width: max-content;
+        overflow: hidden;
+        .txt {
+            color: $color-white;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-second;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-second {
+        @extend .btn;
+        background-color: $color-second;
+        width: max-content;
+        overflow: hidden;
+        i {
+            color: $color-text;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            z-index: 3;
+            transition: 0.4s;
+        }
+        .txt {
+            color: $color-text;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-pri;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                .txt {
+                    color: $color-white;
+                }
+                i {
+                    color: $color-white;
+                }
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-third {
+        @extend .btn;
+        background-color: $color-third;
+        width: max-content;
+        overflow: hidden;
+        .txt {
+            color: $color-white;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-white;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                .txt {
+                    color: $color-third;
+                }
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-white {
+        @extend .btn;
+        background-color: $color-white;
+        width: max-content;
+        overflow: hidden;
+        .txt {
+            color: $color-pri;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-second;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+
+    &-add {
+        @extend .btn;
+        background-color: #F2F2F2;
+        width: max-content;
+        overflow: hidden;
+        img {
+            margin-right: 0.8rem;
+        }
+        .txt {
+            color: $color-text;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-second;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    
+    &-find {
+        @extend .btn;
+        background-color: $color-second;
+        width: max-content;
+        overflow: hidden;
+        i {
+            color: $color-text;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            z-index: 3;
+            transition: 0.4s;
+        }
+        .txt {
+            color: $color-text;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-third;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                .txt {
+                    color: $color-white;
+                }
+                i {
+                    color: $color-white;
+                }
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-seeall {
+        @extend .btn;
+        background-color: #5DC24C;
+        width: max-content;
+        overflow: hidden;
+        i {
+            color: $color-white;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            z-index: 3;
+            transition: 0.4s;
+            @include fz-10;
+        }
+        .txt {
+            color: $color-white;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-third;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                .txt {
+                    color: $color-white;
+                }
+                i {
+                    color: $color-white;
+                }
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-seeallyel {
+        @extend .btn;
+        background-color: $color-second;
+        width: max-content;
+        overflow: hidden;
+        i {
+            color: $color-pri;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            z-index: 3;
+            transition: 0.4s;
+            @include fz-10;
+        }
+        .txt {
+            color: $color-pri;
+            line-height: 1;
+            z-index: 3;
+            margin-top: 0rem;
+        }
+        &::after {
+            content: "";
+            background: $color-third;
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform 0.5s ease;
+        }
+
+        @include min($res-mobile-min) {
+            @include hover {
+                .txt {
+                    color: $color-white;
+                }
+                i {
+                    color: $color-white;
+                }
+                &::after {
+                    transform: scale(1);
+                    transform-origin: center left;
+                }
+            }
+        }
+    }
+    &-prev, &-next {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 100rem;
+        flex-shrink: 0;
+        @include mid-flex;
+        background-color: #d1d1d1;
+        transition: 0.4s;
+        cursor: pointer;
+        i {
+            color: $color-text;
+            transition: 0.4s;
+            @include fz-10;
+            font-weight: 500;
+        }
+        &.current {
+            background-color: $color-pri;
+            pointer-events: none;
+            i {
+                color: $color-white;
+            }
+        }
+        @include hover {
+            background-color: $color-pri;
+            i {
+                color: $color-white;
+            }
+        }
+    }
+}
+.load-btn {
+    width: fit-content;
+    margin-top: 2.4rem;
+    cursor: pointer;
+    .text {
+        color: $color-text;
+    }
+    i {
+        @include fz-14;
+        transition: 0.4s;
+        color: $color-text;
+    }
+    &.active {
+        i {
+            transform: rotate(180deg);
+        }
+    }
+}

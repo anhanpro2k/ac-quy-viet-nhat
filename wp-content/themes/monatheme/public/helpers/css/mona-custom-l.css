@@ -1,0 +1,95 @@
+@import url("404.css");
+@import url("loading-btn.css");
+@import url("loading-group.css");
+
+/* css linh  */
+.input-hidden {
+    display: none;
+}
+
+.page-template-contact-template span.wpcf7-spinner {
+    position: absolute;
+    right: -2rem;
+    z-index: 10;
+}
+
+.page-template-contact-template span.wpcf7-not-valid-tip {
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: absolute;
+}
+
+.page-template-contact-template .wpcf7-response-output {
+    position: absolute;
+}
+
+
+.footer-top-input span.wpcf7-not-valid-tip {
+    position: absolute;
+}
+
+.footer-top-input span.wpcf7-spinner {
+    position: absolute;
+    top: -0.5rem;
+    right: -3rem;
+}
+
+.footer-top-input span.wpcf7-not-valid-tip {
+    position: absolute;
+}
+
+.footer-top-input span.wpcf7-spinner {
+    position: absolute;
+    top: -0.5rem;
+    right: -3rem;
+}
+
+.footer-top-input .wpcf7 form.sent .wpcf7-response-output {
+    color: #ffcb01;
+}
+
+.footer .menu li.menu-item a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    transition: 0.4s;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.footer .menu li.menu-item a::after {
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url(http://acquyvietnhat.monamedia.net/template/assets/images/menuitem.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* .footer .menu li.menu-item a img::after {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(82%) saturate(530%)
+    hue-rotate(358deg) brightness(101%) contrast(104%);
+} */
+.footer .menu li.menu-item a:hover {
+    color: #ffcb01;
+}
+
+.footer .menu li.menu-item a:hover::after {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(82%) saturate(530%) hue-rotate(358deg) brightness(101%) contrast(104%);
+}
+
+.footer-item.col {
+    color: #ffcb01;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.footer-copyright .icon {
+    width: auto !important;
+    height: 2rem;
+    margin: 0 0.6rem;
+}

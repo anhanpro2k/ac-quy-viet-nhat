@@ -1,0 +1,284 @@
+.footer {
+    &-top {
+        background-color: $color-four;
+        padding: 2.8rem 0;
+
+        &-wr {
+            @include flex;
+            align-items: center;
+            @include max(800px) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &-regis {
+            width: calc(5/12*100%);
+            margin-left: auto;
+            @include max(800px) {
+                width: 100%;
+            }
+            .tt {
+                @include fz-24;
+                font-weight: 700;
+                color: $color-white;
+            }
+
+            .desc {
+                color: $color-white;
+            }
+        }
+
+        &-input {
+            width: calc(5/12*100%);
+            @include max(800px) {
+                width: 80%;
+                margin: auto;
+                margin-top: 2rem;
+            }
+            @include max(600px) {
+                width: 100%;
+            }
+            &-wr {
+                width: calc(4/5*100%);
+                position: relative;
+                margin-left: auto;
+                @include max(800px) {
+                    width: 100%;
+                }
+                input {
+                    background-color: $color-white;
+                    border-radius: 0.4rem;
+                    padding: 1.2rem 4rem 1.2rem 1.2rem;
+                    border: none;
+                    width: 100%;
+                }
+
+                .icon {
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        background-color: $color-pri;
+        padding-bottom: 6rem;
+        @include max(800px) {
+            padding-top: 2.4rem;
+        }
+        @include max( 600px) {
+            padding-bottom: 0rem;
+        }
+        &-wr {
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+    &-logo {
+        width: 10.2rem;
+        height: 10.2rem;
+        transform: translateY(-50%);
+        @include max(800px) {
+            transform: translateY(0);
+            margin-bottom: 2.4rem;
+        }
+        .custom-logo-link {
+            width: 100%;
+            height: 100%;
+            display:block;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+        }
+    }
+    &-list {
+        --gutter-y:2.4rem;
+    }
+    &-item {
+        width: 25%;
+        @include max(1000px) {
+            width: 50%;
+        }
+        @include max(320px) {
+            width: 100%;
+        }
+        &-tt {
+            color: $color-second;
+            @include fz-20;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            &:not(:first-child) {
+                margin-top: 3.2rem;
+            }
+        }
+        &:nth-child(1) {
+            order: 2
+        }
+        &:nth-child(4) {
+            order: 3
+        }
+    }
+    &-final {
+        @include flex;
+        flex-wrap: wrap;
+    }
+    &-iframe {
+        width: 100%;
+        margin-bottom: 1rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+    &-social {
+        @include flex;
+        align-items: center;
+        width: 50%;
+        @include max(500px) {
+            width: 100%;
+        }
+        &-item {
+            transition: 0.4s;
+            @include hover {
+                transform: translateY(-0.5rem);
+            }
+            &:not(:first-child) {
+                margin-left: 1.6rem;
+            }
+        }
+    }
+    &-note {
+        width: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        @include max(500px) {
+            margin-left: -0.5rem;
+            margin-top: 0.5rem;
+        }
+    }
+    &-copyright {
+        @include mid-flex;
+        padding: 2.4rem 0;
+        @include max(500px) {
+            @include fz-12;
+        }
+        .txt {
+            color: $color-white;
+        }
+        .icon {
+            width: 2.2rem;
+            height: 1.8rem;
+            margin: 0 0.6rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+        }
+        .strong {
+            color: $color-white;
+            font-weight: 700;
+            @include fz-20;
+            @include max(500px) {
+                @include fz-12;
+            }
+        }
+        .img  {
+            margin-left: 0.6rem;
+        }
+    }
+    .address {
+        &-item {
+            &:not(:first-child) {
+                margin-top: 1.2rem;
+            }
+            &:has(a) {
+                @include hover {
+                    a {
+                        color: $color-second;
+                    }
+                }
+            }
+            .tt {
+                color: $color-second;
+                font-weight: 600;
+                @include fz-14;
+                margin-bottom: 1.2rem;
+            }
+            .desc {
+                color: $color-white;
+                @include fz-14;
+                transition: 0.4s;
+                &.mail {
+                    word-break: break-word;
+                }
+            }
+            
+        }
+        &-link {
+            a {
+                color: $color-white;
+                transition: 0.4s;
+            }
+        }
+    }
+    .menu-list {
+        .menu-item {
+            &.current-menu-item {
+                .menu-link {
+                    color: $color-second;
+                    &::after {
+                        filter: brightness(0) saturate(100%) invert(70%) sepia(82%) saturate(530%) hue-rotate(358deg) brightness(101%) contrast(104%);
+                    }
+                }
+            }
+            .menu-link {
+                color: $color-white;
+                @include fz-14;
+                transition: 0.4s;
+                position: relative;
+                padding-left: 2.5rem;
+                &::after {
+                    content: '';
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-image: url("../assets/images/menuitem.svg");
+                    @include default-background;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                @include hover {
+                    color: $color-second;
+                    &::after {
+                        filter: brightness(0) saturate(100%) invert(70%) sepia(82%) saturate(530%) hue-rotate(358deg) brightness(101%) contrast(104%);
+                    }
+                }
+            }
+        }
+    }
+}

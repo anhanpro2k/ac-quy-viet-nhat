@@ -1,0 +1,26 @@
+.star {
+    @include flex;
+    align-content: start;
+    &-list {
+        position: relative;
+        height: 20px;
+    }
+    &-flex {
+        @include flex;
+        .icon {
+            width: 14px;
+            height: 14px;
+            &:not(:first-child) {
+                margin-left: 4px;
+            }
+        }
+    }
+    &-filter {
+        overflow: hidden;
+        position: absolute;
+        @include posi-vertical;
+        left: 0;
+        height: 100%;
+        width: 0;
+    }
+}
