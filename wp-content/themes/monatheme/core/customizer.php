@@ -52,6 +52,175 @@ if ( class_exists( 'Kirki' ) ) {
 	);
 
 	/**
+	 * Add section
+	 */
+	Kirki::add_section( 'section_info_footer',
+		[
+			'title'      => __( 'Footer Register', 'mona-admin' ),
+			'priority'   => $priority ++,
+			'capability' => 'edit_theme_options',
+		]
+	);
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_footer_title',
+			'label'       => __( 'Tiêu đề', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info_footer',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'textarea',
+			'settings'    => 'section_info_footer_content',
+			'label'       => __( 'Mô tả', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info_footer',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_footer_code',
+			'label'       => __( 'Shortcode Form', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info_footer',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+	/**
+	 * Add section
+	 */
+	Kirki::add_section( 'section_info',
+		[
+			'title'      => __( 'Footer Thông Tin Liên Hệ', 'mona-admin' ),
+			'priority'   => $priority ++,
+			'capability' => 'edit_theme_options',
+		]
+	);
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_title',
+			'label'       => __( 'Tiêu đề', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'editor',
+			'settings'    => 'section_info_phone',
+			'label'       => __( 'Số Điện Thoại', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_address',
+			'label'       => __( 'Địa Chỉ', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_email',
+			'label'       => __( 'Email', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_email',
+			'label'       => __( 'Email', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+	/**
+	 * Add field
+	 */
+	Kirki::add_field( 'mona_setting',
+		[
+			'type'        => 'text',
+			'settings'    => 'section_info_time',
+			'label'       => __( 'Thời gian làm việc', 'mona-admin' ),
+			'description' => '',
+			'help'        => '',
+			'section'     => 'section_info',
+			'default'     => '',
+			'priority'    => $priority ++,
+		]
+	);
+
+
+	/**
 	 * Add field
 	 */
 	// kirki::add_field( 'mona_setting', [

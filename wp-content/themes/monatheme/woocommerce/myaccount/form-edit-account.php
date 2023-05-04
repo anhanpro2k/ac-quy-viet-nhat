@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="account-infor">
         <div class="top">
             <p class="tt">
-				<?php echo __( 'Thay đổi mật khẩu', 'monamedia' ); ?>
+				<?php echo __( 'THAY ĐỔI MẬT KHẨU', 'monamedia' ); ?>
             </p>
         </div>
 		<?php $account_change_pass_description = mona_get_option( 'account_change_pass_description' ); ?>

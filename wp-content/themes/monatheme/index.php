@@ -34,9 +34,9 @@ $current = get_queried_object();
 							<?php
 							if ( ! empty( $mona_blog_featured_title ) ) {
 								?>
-                                <h2 class="title mb4 blur load-img">
+                                <p class="title mb4 blur load-img">
 									<?php echo $mona_blog_featured_title; ?>
-                                </h2>
+                                </p>
 								<?php
 							}
 							?>
@@ -93,7 +93,7 @@ $current = get_queried_object();
                                                             <strong><?php the_author(); ?></strong>
                                                         </p>
                                                         <p class="date">
-															<?php echo get_the_date( 'd/m/Y', $post->ID ) ?>
+															<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date( $post->ID ) ) ); ?>
                                                         </p>
                                                     </div>
                                                     <h3>
@@ -212,76 +212,15 @@ $current = get_queried_object();
                     </div>
                 </div>
             </section>
-            <section class="sec-policy">
-                <div class="policy sec-pd8">
-                    <div class="container">
-                        <div class="policy-wr">
-                            <h2 class="title center mb4 blur load-img">CHÍNH SÁCH BẢO HÀNH</h2>
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="policy-item">
-                                            <div class="icon">
-                                                <img src="<?php echo get_site_url(); ?>/template/assets/images/iconpd.svg"
-                                                     alt="">
-                                            </div>
-                                            <div class="desc">
-                                                <p class="desc-txt">
-                                                    Sản phẩm
-                                                    nhập khẩu 100%
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="policy-item">
-                                            <div class="icon">
-                                                <img src="<?php echo get_site_url(); ?>/template/assets/images/iconclick.svg"
-                                                     alt="">
-                                            </div>
-                                            <div class="desc">
-                                                <p class="desc-txt">
-                                                    Mua hàng online
-                                                    dễ dàng thanh toán
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="policy-item">
-                                            <div class="icon">
-                                                <img src="<?php echo get_site_url(); ?>/template/assets/images/icondollar.svg"
-                                                     alt="">
-                                            </div>
-                                            <div class="desc">
-                                                <p class="desc-txt">
-                                                    1 đổi 1 với
-                                                    chính sách đổi trả
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="policy-item">
-                                            <div class="icon">
-                                                <img src="<?php echo get_site_url(); ?>/template/assets/images/iconship.svg"
-                                                     alt="">
-                                            </div>
-                                            <div class="desc">
-                                                <p class="desc-txt">
-                                                    Giao hàng toàn quốc
-                                                    miễn phí lắp đặt
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+			<?php
+			/**
+			 * GET TEMPLATE PART
+			 * POLICY GLOBAL
+			 */
+			$slug = '/partials/global/global';
+			$name = 'policy';
+			echo get_template_part( $slug, $name );
+			?>
         </div>
     </main>
 

@@ -157,25 +157,33 @@ if ( content_exists( $mona_home_section_cat3 ) ) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <h2>
+                                                    <h3>
                                                         <a class="info-tt" href="<?php the_permalink(); ?>">
 															<?php the_title(); ?>
                                                         </a>
-                                                    </h2>
-                                                    <span class="info-prices">
+                                                    </h3>
+													<?php
+													if ( $product->is_on_sale() ) {
+														?>
+                                                        <span class="info-prices">
                                                         <?php
-                                                        if ( $product->get_sale_price() ) {
-	                                                        echo wp_kses_post( $product->get_price_html() );
-                                                        } else {
-	                                                        echo wp_kses_post( wc_price( $product->get_regular_price() ) );
-                                                        }
+                                                        echo wp_kses_post( wc_price( $product->get_sale_price() ) );
                                                         ?>
-                                                    </span>
-													<?php if ( $product->get_regular_price() && $product->get_sale_price() ) : ?>
-                                                        <span class="info-old-prices">
+                                                            </span>
+														<?php if ( $product->get_regular_price() ) : ?>
+                                                            <span class="info-old-prices">
                                                                 <?php echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?>
-                                                        </span>
-													<?php endif; ?>
+                                                                </span>
+														<?php endif; ?>
+														<?php
+													} else { ?>
+                                                        <span class="info-prices">
+                                                        <?php
+                                                        echo wp_kses_post( wc_price( $product->get_regular_price() ) );
+                                                        ?>
+                                                            </span>
+														<?php
+													} ?>
                                                     <form class="frmAddProductCart">
                                                         <input type="hidden" name="product_id"
                                                                value="<?php echo $post->ID; ?>">

@@ -89,9 +89,9 @@ while ( have_posts() ):
                         <div class="container">
                             <div class="banner-wr">
                                 <div class="banner-content">
-                                    <h2 class="title blur white load-img">
+                                    <h1 class="title blur white load-img">
 										<?php echo $mona_post_banner['banner_title']; ?>
-                                    </h2>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
@@ -115,16 +115,13 @@ while ( have_posts() ):
                     <div class="container">
                         <div class="new-dt-wr row">
                             <div class="new-dt-main col-8">
-                                <h1 class="small-title">
-									<?php the_title() ?>
-                                </h1>
                                 <div class="days">
                                     <div class="icon">
                                         <img src="<?php echo get_site_url(); ?>/template/assets/images/clock.svg"
                                              alt="">
                                     </div>
                                     <p class="txt">
-										<?php echo get_the_date( 'd/m/Y' ) ?>
+										<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date() ) ); ?>
                                     </p>
                                 </div>
                                 <div class="mona-content">

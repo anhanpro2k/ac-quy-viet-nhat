@@ -23,7 +23,6 @@
     position: absolute;
 }
 
-
 .footer-top-input span.wpcf7-not-valid-tip {
     position: absolute;
 }
@@ -36,6 +35,10 @@
 
 .footer-top-input span.wpcf7-not-valid-tip {
     position: absolute;
+    top: 1.7rem;
+    right: 3.5rem;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .footer-top-input span.wpcf7-spinner {
@@ -92,4 +95,56 @@
     width: auto !important;
     height: 2rem;
     margin: 0 0.6rem;
+}
+
+.footer-item .address-link.mona-content {
+    font-size: 1.4rem;
+}
+
+.footer-top-input .wpcf7-response-output {
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+form.wpcf7-form.invalid {
+    /* width: 100%; */
+    position: relative;
+}
+
+.cart-payment-methods .shop_table .cart-Payment-total .btn-second {
+    background-color: #ffcb01;
+    overflow: hidden;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    padding: 1.4rem 1.6rem;
+    min-width: 10rem;
+    border-radius: 0.4rem;
+}
+
+.menu-item div.menu-item-settings {
+    max-width: 100% !important;
+}
+
+.header-burger-btn .txt a.menu-link {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .cart .cart-Payment-total .btn-second.button.alt .txt {
+        color: white;
+    }
+}
+
+.cart .cart-Payment-total .btn-second.button.alt:hover {
 }

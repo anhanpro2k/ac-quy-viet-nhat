@@ -37,6 +37,7 @@ define( 'MONA_WC_THANKYOU', get_option( 'woocommerce_thanks_page_id' ) );
 
 require_once( get_template_directory() . '/__autoload.php' );
 
+
 function mona_pagination_link_news( $wp_query = '' ) {
 	if ( $wp_query == '' ) {
 		global $wp_query;

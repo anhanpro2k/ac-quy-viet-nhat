@@ -57,10 +57,7 @@
                                     <div class="info">
                                         <div class="info-tag row">
                                                         <span class="info-tag-item col">
-                                                            <span class="txt"><?php echo get_the_date( 'j F, Y', $post->ID ) ?></span>
-                                                        </span>
-                                            <span class="info-tag-item col">
-                                                            <span class="txt"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
+                                                            <span class="txt">			<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date( $post->ID ) ) ); ?></span>
                                                         </span>
                                         </div>
                                         <h3>
@@ -98,10 +95,7 @@
                                             <div class="info">
                                                 <div class="info-tag row">
                                                                    <span class="info-tag-item col">
-                                                                       <span class="txt"><?php echo get_the_date( 'j F, Y', $post->ID ) ?></span>
-                                                                   </span>
-                                                    <span class="info-tag-item col">
-                                                                       <span class="txt"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
+                                                                       <span class="txt"><?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date( $post->ID ) ) ); ?></span>
                                                                    </span>
                                                 </div>
                                                 <h3>

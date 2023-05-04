@@ -65,7 +65,11 @@ $current = get_queried_object();
 					$order_number = $customer_order->get_order_number();
 					?>
                     <tr>
-                        <td data-title="Mã đơn hàng">#<?php echo $order_number; ?></td>
+                        <td data-title="Mã đơn hàng">
+                            <a class="mona-" href="<?php echo $customer_order->get_view_order_url(); ?>">
+                                #<?php echo $order_number; ?>
+                            </a>
+                        </td>
                         <td data-title="Ngày mua"><?php echo $order_date_created->format( 'd-m-Y' ); ?></td>
                         <td data-title="Đơn giá"><span class="price"><?php echo wc_price( $order_total ); ?></span>
                         </td>

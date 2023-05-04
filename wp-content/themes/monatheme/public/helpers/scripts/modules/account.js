@@ -244,6 +244,44 @@ export default function MonaCreateModuleAccount() {
         }
     });
 
+// submit form quên mật khẩu
+    $(document).on('submit', '#frmForgot', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        let $loading = $this.find('button');
+        var $form = $this.serialize();
+        if (!$loading.hasClass('loading')) {
+            $.ajax({
+                url: mona_ajax_url.ajaxURL,
+                type: 'post',
+                data: {
+                    action: 'mona_ajax_custommer_forget_password',
+                    form: $form,
+                },
+                error: function (request) {
+                    $loading.removeClass('loading');
+                },
+                beforeSend: function () {
+                    $('.mona-notice').hide();
+                    $loading.addClass('loading');
+                },
+                success: function (result) {
+                    if (result.success) {
+
+                        $('#frmForgot .mona-notice.success').text(result.data.message);
+                        $('#frmForgot .mona-notice.success').show();
+                        $loading.removeClass('loading');
+
+                    } else {
+                        $('#frmForgot .mona-notice.error').text(result.data.error);
+                        $('#frmForgot .mona-notice.error').show();
+                        $loading.removeClass('loading');
+                    }
+                }
+            });
+        }
+    });
+
 
     //Check password
     $(document).ready(function () {

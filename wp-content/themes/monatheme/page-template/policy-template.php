@@ -40,9 +40,9 @@ while ( have_posts() ):
                         <div class="container">
                             <div class="banner-wr">
                                 <div class="banner-content">
-                                    <h2 class="title blur white load-img">
+                                    <p class="title blur white load-img">
 										<?php echo $mona_post_banner['banner_title']; ?>
-                                    </h2>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ while ( have_posts() ):
                                              alt="">
                                     </div>
                                     <p class="txt">
-										<?php echo get_the_date( 'd/m/Y' ) ?>
+										<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date() ) ); ?>
                                     </p>
                                 </div>
                                 <div class="mona-content">

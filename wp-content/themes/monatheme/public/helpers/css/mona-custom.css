@@ -5,6 +5,8 @@
 @import url("loading-group.css");
 @import url("jquery-confirm.min.css");
 @import url("mona-custom-kun.css");
+@import url("alert.css");
+
 
 .jc-bs3-container.container {
     width: 100%;
@@ -48,6 +50,7 @@
 
 .wpcf7 form.invalid .wpcf7-response-output {
     color: red;
+    font-size: 1rem;
 }
 
 .mona-error.mona-error-user-login,
@@ -303,7 +306,7 @@ textarea#orders_comment {
 }
 
 span.select2-selection.select2-selection--single {
-    background-color: #F5F5F5 !important;
+    background-color: transparent;
     border: 0.5rem solid rgb(255 255 255);
     border-radius: 0.4rem;
 }
@@ -501,6 +504,30 @@ input.upload-image {
     border-radius: 100rem;
 }
 
+.header-nav .menu-nav .menu-item > .menu-list .menu-item.current-menu-parent.submenu-item > a:after {
+    opacity: 1 !important;
+    width: 5rem !important;
+    content: "";
+    position: absolute;
+    left: 1rem;
+    bottom: 0;
+    width: 0%;
+    height: 0.4rem;
+    background-color: #FFFFF2;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: -3.8s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    opacity: 0;
+    border-radius: 100rem;
+}
+
 .header-nav .menu-nav > .menu-list > .menu-item-has-children.dropdown > a {
     color: #020D00;
 }
@@ -534,4 +561,185 @@ input.upload-image {
 .chitiet-sanpham .product-detail .content-product .wrapper-quantity-detail .inner-detail .detail-item.recheck-item a:hover {
     background: #00552B;
     color: #FFFFFF;
+}
+
+.header-top-login-wr {
+    cursor: pointer;
+}
+
+.menu-nav .menu-item.parent.dropdown.current-menu-ancestor {
+    background-color: #00552B;
+    color: white !important;
+}
+
+.header-nav .menu-nav > .menu-list > .menu-item.parent.current-menu-ancestor.menu-item-has-children.dropdown > a {
+    color: white;
+}
+
+.menu-nav .menu-item.parent.dropdown.current-menu-ancestor:before {
+    background-color: #00552B;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3.3rem;
+    bottom: 0;
+    right: calc(100% - 0.06rem);
+    z-index: -1;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    transition: inherit;
+    z-index: 2;
+}
+
+.menu-nav .menu-item.parent.dropdown.current-menu-ancestor.submenu-item:before {
+    display: none;
+}
+
+.menu-nav .menu-item.parent.dropdown.current-menu-ancestor.submenu-item:after {
+    display: none;
+}
+
+.menu-nav .menu-item.parent.dropdown.current-menu-ancestor:after {
+    background-color: #00552B;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3.3rem;
+    bottom: 0;
+    left: calc(100% - 0.06rem);
+    z-index: -1;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    transition: inherit;
+    z-index: 2;
+}
+
+.mona-pointer {
+    cursor: pointer;
+}
+
+.button.cart_item[name="update_cart"] {
+    background-color: #00552B;
+    color: white;
+}
+
+.button.cart_item[name="update_cart"]:hover {
+    background-color: #FFCB01;
+}
+
+.count-btn.count-plus img {
+    width: 1.5rem !important;
+}
+
+.count-btn.count-minus img {
+    width: 1.5rem !important;
+}
+
+.info-prices.mona-price {
+    color: #FF5C33;
+    font-size: 3.2rem;
+    font-weight: 600;
+    display: block;
+    margin-left: 2rem;
+}
+
+.info-old-prices.mona-price {
+    color: rgba(2, 13, 0, 0.5);
+    text-decoration: line-through;
+    margin-left: 1.5rem;
+}
+
+.newprod-list .price {
+    display: inline-block;
+}
+
+.menu-nav.menu-have-icon .far.fa-chevron-down:first-child {
+    display: none;
+}
+
+.collapse-headf.active a, .cate-block-list-it.active a {
+    color: #ff5c33;
+}
+
+.footer-top-input .wpcf7 form.sent .wpcf7-response-output {
+    right: -18rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .footer-top-input .wpcf7 form.sent .wpcf7-response-output {
+        right: -18rem;
+    }
+}
+
+.txt.mona-name {
+    color: black;
+}
+
+.mona-order-detail .order-check-inner {
+    flex-wrap: wrap;
+}
+
+
+.mona-order-detail .information-line {
+    width: 100% !important;
+    margin-bottom: 2rem;
+}
+
+.mona-order-detail .bank-information {
+    width: 100% !important;
+}
+
+.mona-order-detail .cart-order-check .order-check-inner {
+    padding: 0 !important;
+}
+
+.mona-order-detail .bank-information {
+    margin-left: 0 !important;
+}
+
+.mona-notice.error {
+    color: red;
+}
+
+.account-table table td[data-title="Mã đơn hàng"] a {
+    color: #1A1A1A;
+}
+
+.account-table table td[data-title="Mã đơn hàng"]:hover a {
+    color: #FF5C33;
+}
+
+.account-table table thead tr th {
+    font-weight: 600;
+}
+
+.mona-image-login {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100rem;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.mona-image-login {
+    margin-right: 0.8rem;
+}
+
+.account .woocommerce-notices-wrapper {
+    display: none;
+}
+
+.cart .cart-Payment-total .vat .txt {
+    display: flex;
+    width: 100%;
+}
+
+.woocommerce-Price-amount.amount {
+    margin-left: auto;
+}
+
+.main .new .sec-pd {
+    padding: 2rem 0 4rem;
+}
+
+.header-top-phone .link a {
+    color: #FF5C33;
 }

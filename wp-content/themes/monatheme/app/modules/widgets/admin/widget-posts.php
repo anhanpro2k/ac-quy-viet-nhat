@@ -72,30 +72,30 @@ class M_Widget_related_post extends WP_Widget {
 		if ( $loop->have_posts() ) {
 			?>
             <div class="newest sidebox">
-	            <?php
-	            if ( ! empty( $title ) ) {
-		            ?>
-                    <h2 class="title blur mb4 load-img"><?php echo $title;?></h2>
-		            <?php
-	            }
-	            ?>
+				<?php
+				if ( ! empty( $title ) ) {
+					?>
+                    <p class="title blur mb4 load-img"><?php echo $title; ?></p>
+					<?php
+				}
+				?>
                 <div class="newest-list">
-	                <?php
-	                while ( $loop->have_posts() ) {
-		                $loop->the_post();?>
-		                <?php
-		                /**
-		                 * GET TEMPLATE PART
-		                 * BOX NEWS SIDEBAR
-		                 */
-		                $slug = '/partials/loop/box';
-		                $name = 'news-sidebar';
-		                echo get_template_part( $slug, $name );
-		                ?>
-		                <?php
-	                }
-	                wp_reset_query();
-	                ?>
+					<?php
+					while ( $loop->have_posts() ) {
+						$loop->the_post(); ?>
+						<?php
+						/**
+						 * GET TEMPLATE PART
+						 * BOX NEWS SIDEBAR
+						 */
+						$slug = '/partials/loop/box';
+						$name = 'news-sidebar';
+						echo get_template_part( $slug, $name );
+						?>
+						<?php
+					}
+					wp_reset_query();
+					?>
 
                 </div>
             </div>
@@ -144,16 +144,16 @@ class M_Widget_related_post extends WP_Widget {
 
 		Mona_Widgets::create_field(
 			[
-				'type'        => 'select',
-				'name'        => $this->get_field_name( 'type' ),
-				'id'          => $this->get_field_id( 'type' ),
-				'value'       => $type,
-				'title'       => __( 'Chọn loại tin tức', 'monamedia' ),
-				'select'      => [
+				'type'   => 'select',
+				'name'   => $this->get_field_name( 'type' ),
+				'id'     => $this->get_field_id( 'type' ),
+				'value'  => $type,
+				'title'  => __( 'Chọn loại tin tức', 'monamedia' ),
+				'select' => [
 					'related_news' => __( 'Bài viết gần đây', 'monamedia' ),
 					'hot_news'     => __( 'Bài viết nổi bật', 'monamedia' ),
 				],
-				'docs'        => false,
+				'docs'   => false,
 			]
 		);
 	}
@@ -172,8 +172,8 @@ class M_Widget_related_post extends WP_Widget {
 
 		$instance = [];
 
-		$instance['title']    = Mona_Widgets::update_field( $new_instance['title'] );
-		$instance['type']     = Mona_Widgets::update_field( $new_instance['type'] );
+		$instance['title'] = Mona_Widgets::update_field( $new_instance['title'] );
+		$instance['type']  = Mona_Widgets::update_field( $new_instance['type'] );
 
 		return $instance;
 

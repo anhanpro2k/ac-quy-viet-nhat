@@ -77,7 +77,7 @@ defined('ABSPATH') || exit;
                 foreach (WC()->cart->get_tax_totals() as $code => $tax) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
         ?>
                     <tr class="tax-rate tax-rate-<?php echo esc_attr(sanitize_title($code)); ?>">
-                        <th><?php echo esc_html($tax->label) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+                        <th><?php echo esc_html($tax->label) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             ?></th>
                         <td data-title="<?php echo esc_attr($tax->label); ?>"><?php echo wp_kses_post($tax->formatted_amount); ?></td>
                     </tr>
@@ -86,7 +86,7 @@ defined('ABSPATH') || exit;
             } else {
                 ?>
                 <tr class="tax-total">
-                    <th><?php echo esc_html(WC()->countries->tax_or_vat()) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+                    <th><?php echo esc_html(WC()->countries->tax_or_vat()) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         ?></th>
                     <td data-title="<?php echo esc_attr(WC()->countries->tax_or_vat()); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
                 </tr>
@@ -101,25 +101,39 @@ defined('ABSPATH') || exit;
             <th><?php esc_html_e('Total', 'woocommerce'); ?></th>
             <td data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
         </tr>
+        <div class="wrapper-total">
+    <a href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>" class="btn-add">
+        <span class="txt"><?php echo __('Tiếp tục mua sắm', 'monamedia'); ?></span>
+    </a>
+    <div class="provisional is-loading-group order-total">
+        <span class="provisional-text"><?php echo __('Tạm tính', 'monamedia'); ?>: </span>
+        <div data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>" class="provisional-price"><?php wc_cart_totals_order_total_html(); ?></div>
+    </div>
+    <div class="wc-proceed-to-checkout btn-pri">
+        <a href="<?php echo get_permalink(MONA_WC_CHECKOUT); ?>" class="txt checkout-button alt wc-forward">
+            <span class="txt"><?php echo __('Tiến thành thanh toán', 'monamedia'); ?></span>
+        </a>
+    </div>
+</div>
 
         <?php do_action('woocommerce_cart_totals_after_order_total'); ?>
 
     </table>
-    
+
     <?php do_action('woocommerce_after_cart_totals'); ?>
 
 </div>
-<div class="wrapper-total">
-    <a href="" class="btn-add">
-        <span class="txt">Tiếp tục mua sắm</span>
+<!-- <div class="wrapper-total">
+    <a href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>" class="btn-add">
+        <span class="txt"><?php echo __('Tiếp tục mua sắm', 'monamedia'); ?></span>
     </a>
-    <div class="provisional">
-        <span class="provisional-text">Tạm tính: </span>
-        <div class="provisional-price"><?php wc_cart_totals_order_total_html(); ?></div>
+    <div class="provisional is-loading-group order-total">
+        <span class="provisional-text"><?php echo __('Tạm tính', 'monamedia'); ?>: </span>
+        <div data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>" class="provisional-price"><?php wc_cart_totals_order_total_html(); ?></div>
     </div>
-    <div class="wc-proceed-to-checkout ">
-        <a href="http://acquyvietnhat.monamedia.net/thanh-toan/" class="btn-pri checkout-button button alt wc-forward">
-            <span class="txt">Tiến thành thanh toán</span>
+    <div class="wc-proceed-to-checkout btn-pri">
+        <a href="<?php echo get_permalink(MONA_WC_CHECKOUT); ?>" class="txt checkout-button alt wc-forward">
+            <span class="txt"><?php echo __('Tiến thành thanh toán', 'monamedia'); ?></span>
         </a>
     </div>
-</div>
+</div> -->

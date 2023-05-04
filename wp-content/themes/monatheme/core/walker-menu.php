@@ -37,60 +37,15 @@ class Mona_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$output .= $title;
 
-		if ( $args->walker->has_children ) { //them icon vao cho no
-			$output .= '<span class="dropdown-icon"><i class="ri-arrow-down-s-line"></i></span>';
-		}
+//		if ($args->walker->has_children) { //them icon vao cho no
+//			$output .= '<span class="dropdown-icon"><i class="ri-arrow-down-s-line"></i></span>';
+//		}
 		if ( $permalink && $permalink != '#' ) {
 			$output .= '</a>';
 		} else {
 			$output .= '</a>';
 		}
 	}
-}
-
-class Mona_Walker_Nav_Menu_Mobile extends Walker_Nav_Menu {
-
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul class='submenu'>\n";
-	}
-
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( "\t", $depth );
-		$output .= "$indent</ul>\n";
-	}
-
-	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$object      = $item->object;
-		$type        = $item->type;
-		$title       = $item->title;
-		$description = $item->description;
-		$permalink   = $item->url;
-
-		if ( $args->walker->has_children && $depth == 0 ) { //Nếu là thằng đầu tiên
-			$output .= "<li class='menu-item parent dropdown" . implode( " ", $item->classes ) . "'>";
-		} else if ( $args->walker->has_children && $depth != 0 ) { //nếu nó là cha khác thằng đuầ
-			$output .= "<li class='submenu-item menu-item parent dropdown" . implode( " ", $item->classes ) . "'>";
-		} else if ( $depth != 0 ) {
-			$output .= "<li class='submenu-item menu-item  dropdown" . implode( " ", $item->classes ) . "'>";
-		} else {
-			$output .= "<li class='menu-item" . implode( " ", $item->classes ) . "'>";
-		}
-
-		$output .= $title;
-
-		if ( $args->walker->has_children ) { //them icon vao cho no
-			$output .= '<span class="dropdown-icon"><i class="ri-arrow-down-s-line"></i></span>';
-		}
-		if ( $permalink && $permalink != '#' ) {
-			$output .= '</a>';
-		} else {
-			$output .= '</a>';
-		}
-
-
-	}
-
 }
 
 class Mona_Walker_Policy_Menu extends Walker_Nav_Menu {
@@ -189,7 +144,6 @@ class Mona_Walker_Nav_Menu_Product extends Walker_Nav_Menu {
 		if ( ! empty( $mona_menumeta_sir ) ) {
 			?>
             <div class="megas">
-                <div class="megas-overlay"></div>
                 <div class="megas-inner">
                     <div class="container">
                         <div class="megas-wr">
@@ -221,9 +175,12 @@ class Mona_Walker_Nav_Menu_Product extends Walker_Nav_Menu {
                                 <div class="megas-right">
 									<?php
 									foreach ( $mona_menumeta_sir as $right ) {
-										$sel       = $right['type_menu_item'];
-										$rep_img   = $right['img_menu_item_mega'];
-										$rep_tax_2 = $right['menu_mega_by_list'];
+										$sel        = $right['type_menu_item'];
+										$rep_img    = $right['img_menu_item_mega'];
+										$rep_tax_2  = $right['menu_mega_by_list'];
+										$link_tax   = $right['sub_menu_mega_item_link_tax'];
+										$title_list = $right['menu_mega_by_title_list'];
+
 										if ( $sel == 'img' ) {
 											?>
 											<?php if ( ! empty( $rep_img ) ) { ?>
@@ -256,50 +213,70 @@ class Mona_Walker_Nav_Menu_Product extends Walker_Nav_Menu {
                                                         <div class="megas-menu-col col">
                                                             <ul class="menu-list">
                                                                 <p class="tt">
-																	<?php _e( 'THƯƠNG HIỆU', 'monamedia' ); ?>
+																	<?php
+																	if ( ! empty( $title_list ) ) {
+																		echo $title_list;
+																	} else {
+																		_e( 'Thương hiệu', 'monamedia' );
+																	} ?>
                                                                 </p>
 																<?php
-																if ( ! empty( $rep_tax_2 ) ) {
-																	foreach ( $rep_tax_2 as $list_farther ) {
-																		?>
-                                                                        <li class="menu-item">
-                                                                            <a href="<?php echo get_term_link( $list_farther['menu_mega_by_tax']->term_id ); ?>"
-                                                                               class="menu-link"><?php echo $list_farther['menu_mega_by_tax']->name; ?></a>
-																			<?php if ( ! empty( $list_farther['menu_mega_by_tax_lv2'] ) ) { ?>
-                                                                                <ul class="menu-list">
-                                                                                    <p class="tt">
-																						<?php _e( 'DÒNG XE', 'monamedia' ); ?>
-                                                                                    </p>
-																					<?php foreach ( $list_farther['menu_mega_by_tax_lv2'] as $list_lv2 ) { ?>
-                                                                                        <li class="menu-item">
-                                                                                            <a href="<?php echo get_term_link( $list_lv2['menu_mega_by_tax_dong_xe']->term_id ); ?>"
-                                                                                               class="menu-link">
-																								<?php echo $list_lv2['menu_mega_by_tax_dong_xe']->name; ?>
-                                                                                            </a>
-																							<?php if ( ! empty( $list_lv2['menu_mega_by_tax_lv3'] ) ) { ?>
-                                                                                                <ul class="menu-list">
-                                                                                                    <p class="tt">
-																										<?php _e( 'ĐỜI XE', 'monamedia' ) ?>
-                                                                                                    </p>
-																									<?php
-																									if ( ! empty( $list_lv2['menu_mega_by_tax_lv3'] ) ) {
-																										foreach ( $list_lv2['menu_mega_by_tax_lv3'] as $list_lv3 ) { ?>
-                                                                                                            <li class="menu-item">
-                                                                                                                <a href="<?php echo get_term_link( $list_lv3->term_id ); ?>"
-                                                                                                                   class="menu-link">
-																													<?php echo $list_lv3->name; ?>
-                                                                                                                </a>
-                                                                                                            </li>
-																										<?php }
-																									} ?>
-                                                                                                </ul>
+																$terms = wp_list_pluck( get_terms( 'category_vehicle_brand', 'hide_empty=0' ), 'term_id' );
+																if ( ! empty( $rep_tax_2 ) ) { ?>
+																	<?php foreach ( $rep_tax_2 as $list_farther ) {
+																		if ( $list_farther['menu_mega_by_tax_sel'] == 1 ) {
+																			$id = $list_farther['menu_mega_by_tax']->term_id;
+																			if ( in_array( $id, $terms ) ) {
+																				?>
+                                                                                <li class="menu-item">
+                                                                                    <a href="<?php echo get_term_link( $list_farther['menu_mega_by_tax']->term_id ); ?>?<?php echo $link_tax->slug; ?>"
+                                                                                       class="menu-link"><?php echo $list_farther['menu_mega_by_tax']->name; ?></a>
+																					<?php if ( ! empty( $list_farther['menu_mega_by_tax_lv2'] ) ) { ?>
+                                                                                        <ul class="menu-list">
+                                                                                            <p class="tt">
+																								<?php _e( 'DÒNG XE', 'monamedia' ); ?>
+                                                                                            </p>
+																							<?php foreach ( $list_farther['menu_mega_by_tax_lv2'] as $list_lv2 ) { ?>
+                                                                                                <li class="menu-item">
+                                                                                                    <a href="<?php echo get_term_link( $list_lv2['menu_mega_by_tax_dong_xe']->term_id ); ?>"
+                                                                                                       class="menu-link">
+																										<?php echo $list_lv2['menu_mega_by_tax_dong_xe']->name; ?>
+                                                                                                    </a>
+																									<?php if ( ! empty( $list_lv2['menu_mega_by_tax_lv3'] ) ) { ?>
+                                                                                                        <ul class="menu-list">
+                                                                                                            <p class="tt">
+																												<?php _e( 'ĐỜI XE', 'monamedia' ) ?>
+                                                                                                            </p>
+																											<?php
+																											if ( ! empty( $list_lv2['menu_mega_by_tax_lv3'] ) ) {
+																												foreach ( $list_lv2['menu_mega_by_tax_lv3'] as $list_lv3 ) { ?>
+                                                                                                                    <li class="menu-item">
+                                                                                                                        <a href="<?php echo get_term_link( $list_lv3->term_id ); ?>"
+                                                                                                                           class="menu-link">
+																															<?php echo $list_lv3->name; ?>
+                                                                                                                        </a>
+                                                                                                                    </li>
+																												<?php }
+																											} ?>
+                                                                                                        </ul>
+																									<?php } ?>
+                                                                                                </li>
 																							<?php } ?>
-                                                                                        </li>
+                                                                                        </ul>
 																					<?php } ?>
-                                                                                </ul>
-																			<?php } ?>
-                                                                        </li>
-																		<?php
+                                                                                </li>
+																				<?php
+																			}
+																		} elseif ( $list_farther['menu_mega_by_tax_sel'] == 2 ) {
+																			if ( ! empty( $list_farther['menu_mega_by_tax_link'] ) ) {
+																				?>
+                                                                                <li class="menu-item">
+                                                                                    <a href="<?php echo $list_farther['menu_mega_by_tax_link']['url']; ?>"
+                                                                                       class="menu-link"><?php echo $list_farther['menu_mega_by_tax_link']['title']; ?></a>
+                                                                                </li>
+
+																			<?php }
+																		}
 																	}
 																} ?>
                                                             </ul>

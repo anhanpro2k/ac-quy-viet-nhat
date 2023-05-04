@@ -436,6 +436,97 @@ function mona_ajax_custommer_login() {
 //
 //}
 //
+
+add_action( 'wp_ajax_nopriv_mona_ajax_custommer_forget_password', 'mona_ajax_custommer_forget_password' ); // no login
+function mona_ajax_custommer_forget_password() {
+
+	$form = array();
+	parse_str( $_POST['form'], $form );
+	$error = [];
+
+	if ( ! isset( $form['forgot_nonce_field'] ) || ! wp_verify_nonce( $form['forgot_nonce_field'], 'forgot_action' ) ) {
+
+		echo wp_send_json_error(
+			[
+
+				'title'       => __( 'Thông báo', 'monamedia' ),
+				'message'     => __( 'Hành động của bạn không được xác thực!', 'monamedia' ),
+				'title_close' => __( 'Đóng', 'monamedia' )
+
+			]
+		);
+		wp_die();
+
+	}
+
+	if ( is_email( $form['user_login'] ) ) {
+		// check user by email
+		$user = get_user_by( 'email', $form['user_login'] );
+	} else {
+		// check user by username
+		$user = get_user_by( 'login', $form['user_login'] );
+	}
+
+	if ( ! empty ( $user ) ) {
+		$user_login = $user->user_login;
+	} else {
+		$error = __( 'Tài khoản không tồn tại!', 'monamedia' );
+		echo wp_send_json_error(
+			[
+				'error' => $error
+			]
+		);
+		wp_die();
+	}
+
+
+	if ( empty( $error ) ) {
+		$user_login = $user->user_login;
+		$user_email = $user->user_email;
+		$key        = get_password_reset_key( $user );
+
+		$message = __( 'Chào bạn ' . $user->data->display_name . ', ' ) . "\r\n\r\n";
+		$message .= __( 'Bạn đã đề nghị lấy lại mật khẩu cho tài khoản trên ' ) . get_bloginfo( 'name' ) . "\r\n\r";
+		$message .= __( 'Để lấy lại mật khẩu. Bạn vui lòng bấm vào đường dẫn bên dưới:' ) . "\r\n";
+
+		if ( empty( $form['redirect'] ) ) {
+			$message .= '<' . get_the_permalink() . "?reset&key=$key&login=" . rawurlencode( $user_login ) . "&forgot-confirm=open>\r\n";
+		} else {
+			$message .= '<' . $form['redirect'] . "?reset&key=$key&login=" . rawurlencode( $user_login ) . "&forgot-confirm=open>\r\n";
+		}
+
+		if ( $message && ! wp_mail( $user_email, wp_specialchars_decode( get_bloginfo( 'name' ) . ' Đặt lại mật khẩu' ), $message ) ) {
+
+			$error = __( 'Không thể gửi email. Vui lòng liên hệ với admin để tìm hiểu thêm', 'monamedia' );
+			echo wp_send_json_error(
+				[
+					'error' => $error
+				]
+			);
+			wp_die();
+
+		} else {
+
+			echo wp_send_json_success(
+				[
+					'message' => __( 'Chúng tôi đã gửi một email đến ' . $user_email . ' với một liên kết để đặt lại mật khẩu của bạn.', 'monamedia' )
+				]
+			);
+			wp_die();
+
+		}
+
+	} else {
+		echo wp_send_json_error(
+			[
+				'error' => $error
+			]
+		);
+		wp_die();
+	}
+}
+
+
 add_action( 'wp_ajax_mona_ajax_update_account', 'mona_ajax_update_account' ); // login
 function mona_ajax_update_account() {
 	$form = array();
@@ -461,6 +552,13 @@ function mona_ajax_update_account() {
 			$itemFilesize    = $itemFile['size'];
 			$alow_extensions = array( 'image/jpeg', 'image/jpg', 'image/png' );
 			if ( ! function_exists( 'wp_handle_upload' ) ) {
+				wp_send_json_error(
+					[
+						'title'   => __( '====Thông báo, đây là JSON để TEST!', 'monamedia' ),
+						'message' => "da chay vao day",
+					]
+				);
+				wp_die();
 				require_once( ABSPATH . 'wp-admin/includes/file.php' );
 			}
 			if ( ! in_array( $itemFiletype, $alow_extensions ) ) {

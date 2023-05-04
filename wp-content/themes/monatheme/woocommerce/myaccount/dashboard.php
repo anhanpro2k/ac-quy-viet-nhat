@@ -69,7 +69,7 @@ $Account          = new Account();
                 <a href="" class="link">
 
                 </a>
-                <label class="label-wrap">
+                <label class="label-wrap mona-pointer">
                     <span class="link"><?php echo __( 'Thay đổi', 'monamedia' ); ?></span>
                     <input type="file" class="upload-image" name="user_avatar">
                 </label>

@@ -17,13 +17,30 @@ $product = wc_get_product( $post->ID );
         </div>
         <div class="info">
             <div class="info-inner">
-                <h3>
+                <p>
                     <a href="<?php echo get_permalink( $post->ID ); ?>"
                        class="tt"><?php echo get_the_title( $post->ID ); ?></a>
-                </h3>
-                <div class="price">
-					<?php echo MonaProducts::PriceProduct( $post->ID ); ?>
-                </div>
+                </p>
+				<?php
+				if ( $product->is_on_sale() ) {
+					?>
+                    <div class="price">
+						<?php
+						echo wp_kses_post( wc_price( $product->get_sale_price() ) );
+						?>
+                    </div>
+                    <span class="info-old-prices mona-price">
+					<?php echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?>
+                    </span>
+					<?php
+				} else { ?>
+                    <div class="price">
+						<?php
+						echo wp_kses_post( wc_price( $product->get_regular_price() ) );
+						?>
+                    </div>
+					<?php
+				} ?>
             </div>
         </div>
     </div>

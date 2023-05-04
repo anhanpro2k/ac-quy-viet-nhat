@@ -1,0 +1,263 @@
+
+.alert {
+    background: #ffdb9b;
+    padding: 10px 20px;
+    min-width: 320px;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 6rem;
+    border-radius: 4px;
+    border-left: 8px solid #ffa502;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+.alert.showAlert {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.alert.show {
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-10%);
+    }
+
+    80% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.alert.hide {
+    animation: hide_slide 1s ease forwards;
+}
+
+@keyframes hide_slide {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(0%);
+    }
+
+    80% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.alert .m-bold-text {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.alert .m-css-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce8500;
+    font-size: 20px;
+    margin-right: 0.8rem;
+}
+
+.alert .msg {
+    padding: 0 10px;
+    font-size: 12px;
+    color: #ce8500;
+}
+
+.alert .close-btn {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd080;
+    padding: 20px 12px;
+    cursor: pointer;
+}
+
+.alert .close-btn:hover {
+    background: #ffc766;
+}
+
+.alert .close-btn .fas {
+    color: #ce8500;
+    font-size: 10px;
+}
+
+/* Success */
+.alert.success {
+    background: #d4ffc1;
+    border-left: 8px solid #10b60b;
+}
+
+.alert.success .m-css-icon {
+    color: #2cc518;
+}
+
+.alert.success .close-btn .fas {
+    color: #666;
+}
+
+.alert.success .close-btn {
+    background: #666;
+    transition: 0.3s;
+}
+
+.alert.success .msg {
+    padding: 0 20px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+    padding-left: 2rem;
+}
+
+.alert.success .close-btn:hover {
+    background: #d7fbc7;
+    transition: 0.3s;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.alert.success .close-btn .fas {
+    color: #666;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+/* Error */
+.alert.error {
+    background: #ffa6a6;
+    border-left: 8px solid #ff0202;
+}
+
+.alert.error .m-css-icon {
+    color: #c00a0a;
+}
+
+.alert.error .close-btn .fas {
+    color: #c00a0a;
+}
+
+.alert.error .close-btn {
+    background: #ff8484;
+    transition: 0.3s;
+}
+
+.alert.error .msg {
+    padding: 0 20px;
+    font-size: 12px;
+    color: #b80101;
+    font-weight: 500;
+}
+
+.alert.error .close-btn:hover {
+    background: #ff7575;
+    transition: 0.3s;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.alert.error .close-btn .fas {
+    color: #ce0000;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+@media (min-width: 1201px) {
+    .alert {
+        top: 9rem;
+    }
+
+    .alert .m-bold-text {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .alert .m-main-text {
+        color: #666;
+    }
+
+    .alert .m-css-icon {
+        font-size: 20px;
+    }
+
+    .alert .msg {
+        font-size: 18px;
+    }
+
+
+    .alert .close-btn .fas {
+        font-size: 10px;
+    }
+
+    .alert.success .close-btn {
+        background: #666;
+        transition: 0.3s;
+    }
+
+    .alert.success .msg {
+        font-size: 18px;
+    }
+
+
+    .alert.success .close-btn .fas {
+        font-size: 22px;
+        color: #666;
+    }
+
+
+    .alert.error .msg {
+        font-size: 18px;
+    }
+
+    .alert.error .close-btn .fas {
+        font-size: 22px;
+    }
+
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    background: white !important;
+}
+
+.msg-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.msg-info .msg {
+    display: flex;
+    flex-direction: column;
+}
+
+.alert .close-btn {
+    background: transparent !important;
+}
+
+.alert .close-btn .fas {
+    font-size: 1.6rem !important;
+}

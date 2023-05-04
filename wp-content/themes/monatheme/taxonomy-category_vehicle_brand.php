@@ -37,10 +37,10 @@ $current_taxonomy = get_queried_object(); ?>
                                 <div class="banner-content">
                                     <div class="title sub-title-top white" data-aos="fade-right"
                                          data-aos-delay="200"><?php echo $mona_product_section_banner_ads['ads_title_1']; ?> </div>
-                                    <h2 class="title title-scale white load-img" data-aos="fade-right"
-                                        data-aos-delay="500">
+                                    <p class="title title-scale white load-img" data-aos="fade-right"
+                                       data-aos-delay="500">
 										<?php echo $mona_product_section_banner_ads['ads_title_2']; ?>
-                                    </h2>
+                                    </p>
                                     <div class="title sub-title-bottom white" data-aos="fade-right"
                                          data-aos-delay="800">
 										<?php echo $mona_product_section_banner_ads['ads_title_3']; ?>
@@ -153,11 +153,11 @@ $current_taxonomy = get_queried_object(); ?>
                                                     <img src="<?php echo get_site_url(); ?>/template/assets/images/filter.svg"
                                                          alt="">
                                                 </span>
-                                                    <h2 class="tt"><?php echo __( 'Bộ lọc', 'monamedia' ); ?></h2>
+                                                    <p class="tt"><?php echo __( 'Bộ lọc', 'monamedia' ); ?></p>
                                                 </div>
                                                 <div class="content">
                                                     <div class="cate-block">
-                                                        <h3 class="cate-block-tt"><?php echo __( 'DANH MỤC SẢN PHẨM', 'monamedia' ); ?></h3>
+                                                        <p class="cate-block-tt"><?php echo __( 'DANH MỤC SẢN PHẨM', 'monamedia' ); ?></p>
 														<?php
 														$args       = array(
 															'taxonomy'   => 'product_cat',
@@ -206,7 +206,7 @@ $current_taxonomy = get_queried_object(); ?>
 														<?php } ?>
                                                     </div>
                                                     <div class="cate-block">
-                                                        <h3 class="cate-block-tt"><?php echo __( 'CHỌN HÃNG XE', 'monamedia' ); ?></h3>
+                                                        <p class="cate-block-tt"><?php echo __( 'CHỌN HÃNG XE', 'monamedia' ); ?></p>
 														<?php
 														$args             = array(
 															'taxonomy'   => 'category_vehicle_brand',
@@ -221,7 +221,7 @@ $current_taxonomy = get_queried_object(); ?>
 																foreach ( $categories_brand as $key_brand => $item_brand ) {
 																	?>
                                                                     <div class="cate-block-item collapse-itemf">
-                                                                        <div class="collapse-headf">
+                                                                        <div class="collapse-headf  <?php echo $current_taxonomy->term_id == $item_brand->term_id || $current_taxonomy->parent == $item_brand->term_id ? 'active' : '' ?>">
                                                                             <a href="<?php echo get_category_link( $item_brand->term_id ); ?>"
                                                                                class="collapse-headf-link"><?php echo $item_brand->name; ?></a>
                                                                             <div class="icon">
@@ -243,7 +243,7 @@ $current_taxonomy = get_queried_object(); ?>
 																					<?php
 																					foreach ( $sub_brands as $key_sub_brand => $item_sub_brand ) {
 																						?>
-                                                                                        <li class="cate-block-list-it">
+                                                                                        <li class="cate-block-list-it  <?php echo $current_taxonomy->term_id == $item_sub_brand->term_id ? 'active' : '' ?>">
                                                                                             <a href="<?php echo get_category_link( $item_sub_brand->term_id ); ?>"
                                                                                                class="cate-block-link"><?php echo $item_sub_brand->name; ?></a>
                                                                                         </li>
@@ -268,7 +268,7 @@ $current_taxonomy = get_queried_object(); ?>
 													) );
 													?>
                                                     <div class="cate-block">
-                                                        <h3 class="cate-block-tt"><?php echo __( 'DUNG LƯỢNG', 'monamedia' ); ?></h3>
+                                                        <p class="cate-block-tt"><?php echo __( 'DUNG LƯỢNG', 'monamedia' ); ?></p>
                                                         <div class="cate-block-check recheck-block load-container"
                                                              data-load-init="6" data-load-sl="99">
 															<?php foreach ( $terms as $term ) { ?>
@@ -281,6 +281,8 @@ $current_taxonomy = get_queried_object(); ?>
                                                                         <span class="icon">
                                                                         <img src="<?php echo get_site_url(); ?>/template/assets/images/check.svg"
                                                                              alt="">
+                                                                            <img src="<?php echo get_template_directory_uri(); ?>/public/helpers/images/unchecked.svg"
+                                                                                 alt="">
                                                                     </span>
                                                                         <p class="txt"><?php echo $term->name; ?></p>
                                                                     </div>
@@ -300,7 +302,7 @@ $current_taxonomy = get_queried_object(); ?>
 													) );
 													?>
                                                     <div class="cate-block">
-                                                        <h3 class="cate-block-tt"><?php echo __( 'ĐIỆN ÁP', 'monamedia' ); ?></h3>
+                                                        <p class="cate-block-tt"><?php echo __( 'ĐIỆN ÁP', 'monamedia' ); ?></p>
                                                         <div class="cate-block-check recheck-block load-container"
                                                              data-load-init="6" data-load-sl="99">
 															<?php foreach ( $terms as $term ) { ?>
@@ -313,6 +315,8 @@ $current_taxonomy = get_queried_object(); ?>
                                                                         <span class="icon">
                                                                         <img src="<?php echo get_site_url(); ?>/template/assets/images/check.svg"
                                                                              alt="">
+                                                                            <img src="<?php echo get_template_directory_uri(); ?>/public/helpers/images/unchecked.svg"
+                                                                                 alt="">
                                                                     </span>
                                                                         <p class="txt"><?php echo $term->name; ?></p>
                                                                     </div>
@@ -331,7 +335,7 @@ $current_taxonomy = get_queried_object(); ?>
 													) );
 													?>
                                                     <div class="cate-block">
-                                                        <h3 class="cate-block-tt"><?php echo __( 'CỌC BÌNH', 'monamedia' ); ?></h3>
+                                                        <p class="cate-block-tt"><?php echo __( 'CỌC BÌNH', 'monamedia' ); ?></p>
                                                         <div class="cate-block-check recheck-block load-container"
                                                              data-load-init="6" data-load-sl="99">
 															<?php foreach ( $terms as $term ) { ?>
@@ -344,6 +348,8 @@ $current_taxonomy = get_queried_object(); ?>
                                                                         <span class="icon">
                                                                         <img src="<?php echo get_site_url(); ?>/template/assets/images/check.svg"
                                                                              alt="">
+                                                                            <img src="<?php echo get_template_directory_uri(); ?>/public/helpers/images/unchecked.svg"
+                                                                                 alt="">
                                                                     </span>
                                                                         <p class="txt"><?php echo $term->name; ?></p>
                                                                     </div>
@@ -359,7 +365,7 @@ $current_taxonomy = get_queried_object(); ?>
                                             </div>
                                         </div>
                                         <div class="side-close">
-                                            <i class="fas fa-times close icon"></i>
+                                            <i class="fas fa-times icon"></i>
                                         </div>
                                     </div>
                                     <div class="side-overlay"></div>
@@ -507,7 +513,18 @@ $current_taxonomy = get_queried_object(); ?>
 											]
 										]
 									);
-									$loop         = new WP_Query( $argsProduct );
+
+									if ( isset( $_GET['danhmuc'] ) ) {
+										$argsProduct['tax_query'][] = array(
+											'relation' => 'AND',
+											array(
+												'taxonomy' => 'product_cat',
+												'field'    => 'slug',
+												'terms'    => @$_GET['danhmuc'],
+											),
+										);
+									}
+									$loop = new WP_Query( $argsProduct );
 									?>
 									<?php if ( $loop->have_posts() ): ?>
                                         <div class="is-loading-group" id="monaProductsList">
@@ -534,7 +551,7 @@ $current_taxonomy = get_queried_object(); ?>
                                                                     <div class="col">
                                                                         <div class="tag">
 																			<?php
-																			$product_tags = get_field( 'mona_product_tag', $post->ID );
+																			$product_tags = get_field( 'mona_product_tag', $product_ID );
 																			if ( content_exists( $product_tags ) ) :
 																				foreach ( $product_tags as $tag ) { ?>
                                                                                     <span class="tag-item"
@@ -558,10 +575,10 @@ $current_taxonomy = get_queried_object(); ?>
 																	<?php endif ?>
                                                                 </div>
                                                             </div>
-                                                            <h2>
+                                                            <h3>
                                                                 <a class="info-tt"
                                                                    href="<?php echo get_permalink( $product_ID ) ?>"><?php echo get_the_title( $product_ID ) ?></a>
-                                                            </h2>
+                                                            </h3>
                                                             <span class="info-prices">
                                                     <?php if ( $product_key->is_on_sale() ) :
 	                                                    echo wc_price( $product_key->get_sale_price() );
@@ -619,10 +636,9 @@ $current_taxonomy = get_queried_object(); ?>
 												}
 												wp_reset_query();
 												?>
-
-                                                <div class="pagimain">
-													<?php mona_pagination_links( $loop ); ?>
-                                                </div>
+                                            </div>
+                                            <div class="pagimain">
+												<?php mona_pagination_links( $loop ); ?>
                                             </div>
                                         </div>
 									<?php else: ?>
@@ -662,10 +678,10 @@ $current_taxonomy = get_queried_object(); ?>
                                 <div class="banner-content">
                                     <div class="title sub-title-top white" data-aos="fade-right"
                                          data-aos-delay="200"><?php echo $mona_product_section_banner_ads2['ads2_title_1']; ?> </div>
-                                    <h2 class="title title-scale white load-img" data-aos="fade-right"
-                                        data-aos-delay="500">
+                                    <p class="title title-scale white load-img" data-aos="fade-right"
+                                       data-aos-delay="500">
 										<?php echo $mona_product_section_banner_ads2['ads2_title_2']; ?>
-                                    </h2>
+                                    </p>
                                     <div class="title sub-title-bottom white" data-aos="fade-right"
                                          data-aos-delay="800">
 										<?php echo $mona_product_section_banner_ads2['ads2_title_3']; ?>

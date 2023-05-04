@@ -51,13 +51,21 @@ if ( wp_is_mobile() ) {
                 <div class="header-top-wr">
                     <div class="header-top-phone">
                             <span class="icon">
-                                <img src="
-<?php echo get_site_url(); ?>/template/assets/images/phone-call.svg" alt="">
+                                <img src="<?php echo get_site_url(); ?>/template/assets/images/phone-call.svg" alt="">
                             </span>
                         <span class="txt"><?php echo __( 'Hỗ trợ', 'monamedia' ); ?></span>
-                        <a href="<?php echo mona_replace_tel( '0763.100.100' ) ?>" class="link">
-                            0763.100.100 - 0963 100 100
-                        </a>
+						<?php
+						$footer_phone = mona_get_option( 'section_info_phone' );
+						?>
+						<?php
+						if ( ! empty( $footer_phone ) ) {
+							?>
+                            <div class="link">
+								<?php echo $footer_phone ?>
+                            </div>
+							<?php
+						}
+						?>
                     </div>
                     <div class="header-top-search">
                         <form action="<?php echo get_home_url() ?>">
@@ -75,17 +83,63 @@ if ( wp_is_mobile() ) {
                     <div class="header-top-login <?php echo( is_user_logged_in() ? 'logged' : '' ) ?>">
                         <div class="header-top-login-wr <?php echo( is_user_logged_in() ? 'logged' : '' ) ?>">
 							<?php if ( is_user_logged_in() ) {
-								$user_id = get_current_user_id();
-								$account = get_userdata( $user_id );
+								$user_id          = get_current_user_id();
+								$account          = get_userdata( $user_id );
+								$mona_user_avatar = get_field( 'mona_user_avatar', $account );
 								?>
-                                <a href="<?php echo get_permalink( MONA_WC_MYACCOUNT ) ?>" class="avatar">
-									<?php echo get_avatar( $user_id, 32 ); ?>
+
+                                <a href="<?php echo ! wp_is_mobile() ? get_permalink( MONA_WC_MYACCOUNT ) : 'javascript:;' ?>"
+                                   class="avatar">
+									<?php
+									if ( ! empty( $mona_user_avatar ) ) {
+										?>
+										<?php echo wp_get_attachment_image( $mona_user_avatar, '300x200' ); ?>
+										<?php
+									} else {
+										echo get_avatar( $user_id );
+									}
+									?>
+
                                 </a>
+
                                 <a href="<?php echo get_permalink( MONA_WC_MYACCOUNT ) ?>" class="txt mona-name">
 									<?php echo $account->display_name; ?>
                                 </a>
 
+                                <div class="icon">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+
+                                <div class="header-login-infor">
+                                    <ul class="header-login-list">
+                                        <li class="header-login-item">
+                                            <a href="<?php echo get_permalink( MONA_WC_MYACCOUNT ) ?>"
+                                               class="header-login-link"><?php echo __( 'Tài khoản', 'monamedia' ); ?></a>
+                                        </li>
+                                        <li class="header-login-item">
+                                            <a href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ) ?>"
+                                               class="header-login-link"><?php echo __( 'Đơn hàng', 'monamedia' ); ?></a>
+                                        </li>
+                                        <li class="header-login-item">
+                                            <a href="<?php echo esc_url( wc_get_account_endpoint_url( 'thay-doi-mat-khau' ) ) ?>"
+                                               class="header-login-link"><?php echo __( 'Thay đổi mật khẩu', 'monamedia' ); ?></a>
+                                        </li>
+                                        <li class="header-login-item">
+                                            <a href="<?php echo esc_url( wc_get_account_endpoint_url( 'customer-logout' ) ); ?>"
+                                               class="header-login-link"><?php echo __( 'Đăng xuất', 'monamedia' ); ?></a>
+                                        </li>
+                                    </ul>
+                                </div>
 							<?php } else { ?>
+								<?php
+								if ( wp_is_mobile() ) {
+									?>
+                                    <a href="javascript:;" class="mona-image-login">
+                                        <img src="<?php echo get_template_directory_uri() ?>/public/helpers/images/icons8-male_user.svg"
+                                             alt="">
+                                    </a>
+									<?php
+								} ?>
                                 <span class="txt">
                                     <?php echo __( 'Đăng nhập', 'monamedia' ); ?>
                                 </span>
@@ -101,23 +155,31 @@ if ( wp_is_mobile() ) {
 											<?php echo __( 'Đăng ký tài khoản', 'monamedia' ); ?>
                                         </div>
                                     </div>
-                                    <div class="header-login-forgot">
-                                        <div class="forgotCloseJS">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                        <p class="note">
-											<?php echo __( 'Hãy nhập địa chỉ gmail của bạn dưới đây hệ thống sẽ gửi cho bạn một liên kết
+                                    <form id="frmForgot">
+                                        <div class="header-login-forgot">
+                                            <div class="forgotCloseJS">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                            <p class="note">
+												<?php echo __( 'Hãy nhập địa chỉ gmail của bạn dưới đây hệ thống sẽ gửi cho bạn một liên kết
                                             để đặt lại mật khẩu', 'monamedia' ); ?>
-                                        </p>
-                                        <div class="input">
-                                            <input type="text" placeholder="Nhập gmail của bạn">
-                                        </div>
-                                        <button type="submit" class="btn-pri">
+                                            </p>
+                                            <div class="input">
+                                                <input type="text" name="redirect"
+                                                       value="<?php echo get_the_permalink( get_the_ID() ) ?>" hidden>
+                                                <input type="text" name="user_login"
+                                                       placeholder="Nhập gmail của bạn">
+                                            </div>
+											<?php wp_nonce_field( 'forgot_action', 'forgot_nonce_field' ); ?>
+                                            <div style="display: none;" class="mona-notice error"></div>
+                                            <div style="display: none;" class="mona-notice success"></div>
+                                            <button type="submit" class="btn-pri is-loading-btn">
                                             <span class="txt">
                                                 <?php echo __( 'Gửi', 'monamedia' ); ?>
                                             </span>
-                                        </button>
-                                    </div>
+                                            </button>
+                                        </div>
+                                    </form>
                                     <div class="header-login-body">
                                         <div class="header-login-form tabPanel">
                                             <div class="contentTab">
@@ -149,6 +211,7 @@ if ( wp_is_mobile() ) {
                                                             <span
                                                                     class="txt"><?php echo __( 'Đăng nhập', 'monamedia' ); ?></span>
                                                         </button>
+
                                                         <div class="txt forgotJS">
 															<?php echo __( 'Quên mật khẩu', 'monamedia' ); ?>
                                                             ?
@@ -213,19 +276,6 @@ if ( wp_is_mobile() ) {
                                         </div>
                                     </div>
                                     <!-- login hover information -->
-                                </div>
-                                <div class="header-login-infor">
-                                    <ul class="header-login-list">
-                                        <li class="header-login-item">
-                                            <a href="" class="header-login-link">Tài khoản</a>
-                                        </li>
-                                        <li class="header-login-item">
-                                            <a href="" class="header-login-link">Đơn hàng</a>
-                                        </li>
-                                        <li class="header-login-item">
-                                            <a href="" class="header-login-link">Đăng xuất</a>
-                                        </li>
-                                    </ul>
                                 </div>
 								<?php
 							} ?>
@@ -300,7 +350,8 @@ if ( wp_is_mobile() ) {
                     </div>
 
                     <div class="header-cart">
-                        <a class="mona-cart-link" href="<?php echo get_permalink( MONA_WC_CART ) ?>">
+                        <a class="mona-cart-link"
+                           href="<?php echo wp_is_mobile() ? 'javascript:;' : get_permalink( MONA_WC_CART ) ?>">
                                 <span class="icon">
                                     <img src="<?php echo get_site_url(); ?>/template/assets/images/shopping-cart.svg"
                                          alt="">
@@ -345,42 +396,9 @@ if ( wp_is_mobile() ) {
                         </div>
                     </div>
                 </div>
-                <div class="mobile-content">
-                    <p class="mobile-title">
-                        Thông tin liên hệ
-                    </p>
-                    <div class="mobile-fl mb-16s">
-                        <span class="fw-6"> Địa chỉ: </span>
-                        <p class="mobile-text mobile-link">
-                            24A Hàm Nghi Dong Ha, Quảng Trị, Việt Nam
-                        </p>
-                    </div>
-                    <div class="mobile-fl mb-16s">
-                        <span class="fw-6">Phone:</span>
-                        <a href="" class="mobile-text mobile-link">
-                            0949 0531 23
-                        </a>
-                    </div>
-                    <div class="mobile-fl mb-16s">
-                        <span class="fw-6">Email:</span>
-                        <a href="" class="mobile-text mobile-link">
-                            thanhthuyqtkd@gmail.com
-                        </a>
-                    </div>
-                </div>
 
-            </div>
-            <div class="mobile-mxh">
-                <a href="https://facebook.com/" class="mobile-mxh-link" target="_blank">
-                    <img src="http://acquyvietnhat.monamedia.net/wp-content/uploads/2023/03/fb.png" alt="">
-                </a>
-                <a href="https://www.instagram.com/" class="mobile-mxh-link" target="_blank">
-                    <img src="http://acquyvietnhat.monamedia.net/wp-content/uploads/2023/03/ins.png" alt="">
-                </a>
-                <a href="https://twitter.com/" class="mobile-mxh-link" target="_blank">
-                    <img src="http://acquyvietnhat.monamedia.net/wp-content/uploads/2023/03/twitter.png" alt="">
-                </a>
             </div>
         </div>
     </div>
+    <div class="megas-overlay"></div>
 </header>

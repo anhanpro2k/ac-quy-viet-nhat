@@ -20,24 +20,24 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'acquyvietnhatmonamedianet');
+define( 'DB_NAME', 'acquyvietnhatmonamedianet' );
 
 /** MySQL database username */
-define('DB_USER', 'acquyvietnhatmonamedianet');
+define( 'DB_USER', 'acquyvietnhatmonamedianet' );
 
 /** MySQL database password */
-define('DB_PASSWORD', 'n7jkKXIJ7j07f6et');
+define( 'DB_PASSWORD', 'n7jkKXIJ7j07f6et' );
 
 /** MySQL hostname */
-define('DB_HOST', '127.0.0.1');
+define( 'DB_HOST', '127.0.0.1' );
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+define( 'DB_COLLATE', '' );
 define( 'WPCF7_AUTOP', false );
-define('DISALLOW_FILE_EDIT', true);
+define( 'DISALLOW_FILE_EDIT', true );
 /**#@-*/
 /**
  * WordPress Database Table prefix.
@@ -45,7 +45,7 @@ define('DISALLOW_FILE_EDIT', true);
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'mona_prex_';
+$table_prefix = 'mona_prex_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -59,13 +59,14 @@ $table_prefix  = 'mona_prex_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define( 'WP_DEBUG', false );
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once( ABSPATH . 'wp-settings.php' );

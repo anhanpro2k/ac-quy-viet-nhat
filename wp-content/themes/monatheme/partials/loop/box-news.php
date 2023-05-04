@@ -20,7 +20,7 @@
                     <strong><?php echo get_the_author(); ?></strong>
                 </p>
                 <p class="date">
-					<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date() ) ); ?>
+					<?php echo date_i18n( 'd \t\h\á\n\g m, Y', strtotime( get_the_date( $post->ID ) ) ); ?>
                 </p>
             </div>
             <h3>

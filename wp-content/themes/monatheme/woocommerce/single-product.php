@@ -31,7 +31,7 @@ $product_obj        = wc_get_product( $current_product_id ); ?>
 									$product_gallery = $product->get_gallery_image_ids();
 
 									// Nếu có gallery thì hiển thị các ảnh sản phẩm
-									if ( content_exists( $product_gallery ) ) {
+									if ( $product_gallery ) {
 										// Hiển thị ảnh đầu tiên là thumbnail của sản phẩm
 										?>
                                         <div class="swiper-slide">
@@ -100,8 +100,34 @@ $product_obj        = wc_get_product( $current_product_id ); ?>
                             </div>
                             <div class="price content-product-item">
                                 <span class="name"><?php echo __( 'Giá bán', 'monamedia' ); ?>:</span>
-                                <div class="txt"
-                                     id="monaProductPrice"><?php echo MonaProducts::PriceProduct( $product_id ); ?></div>
+
+								<?php
+								if ( $product->is_on_sale() ) {
+									?>
+                                    <span class="info-prices mona-price">
+                                                        <?php
+                                                        echo wp_kses_post( wc_price( $product->get_sale_price() ) );
+                                                        ?>
+                                                            </span>
+									<?php if ( $product->get_regular_price() ) : ?>
+                                        <span class="info-old-prices mona-price">
+                                                                <?php echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?>
+                                                                </span>
+									<?php endif; ?>
+									<?php
+								} else { ?>
+                                    <div class="txt"
+                                         id="monaProductPrice">
+										<?php echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?></div>
+									<?php
+								} ?>
+
+                                <!--                                <div class="txt"-->
+                                <!--                                     id="monaProductPrice">-->
+                                <!--									-->
+								<?php //echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?><!--</div>-->
+
+
                             </div>
                             <div class="wrapper-box content-product-item">
                                 <div class="quantity-wrapper">

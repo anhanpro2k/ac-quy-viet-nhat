@@ -33,9 +33,9 @@ function mona_ajax_add_to_cart() {
 			echo wp_send_json_success(
 				[
 					'title'     => __( 'Thông báo!', 'monamedia' ),
-					'message'   => __( 'Sản phẩm được thêm vào giỏ hàng thành công', 'monamedia' ),
+					'message'   => __( 'Đã thêm sản phẩm vào giỏ hàng', 'monamedia' ),
 					'action'    => [
-						'title'       => '<span class="text">' . __( 'Thanh toán', 'monamedia' ) . '</span>',
+						'title'       => '<span class="text">' . __( 'Thông báo', 'monamedia' ) . '</span>',
 						'url'         => get_the_permalink( MONA_WC_CHECKOUT ),
 						'title_close' => '<span class="text">' . __( 'Đóng', 'monamedia' ) . '</span>',
 					],
@@ -66,6 +66,7 @@ function mona_ajax_add_to_cart() {
 
 add_action( 'wp_ajax_mona_ajax_add_to_cart', 'mona_ajax_add_to_cart' ); // login
 add_action( 'wp_ajax_nopriv_mona_ajax_add_to_cart', 'mona_ajax_add_to_cart' ); // no login
+
 
 // AJAX ADD TO CART LIST
 function mona_ajax_add_to_cart_list() {
@@ -235,5 +236,6 @@ function mona_ajax_loading_cart() {
 	);
 	wp_die();
 }
+
 
 

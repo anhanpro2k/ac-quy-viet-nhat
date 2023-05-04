@@ -2,6 +2,30 @@
 add_action( 'wp_ajax_mona_ajax_default', '_default' ); // login
 add_action( 'wp_ajax_nopriv_mona_ajax_default', '_default' ); // no login
 
+add_action( 'wp_ajax_m_remove_cart_item', 'm_remove_cart_item' ); // login
+add_action( 'wp_ajax_nopriv_m_remove_cart_item', 'm_remove_cart_item' ); // no login
+function m_remove_cart_item() {
+	$cart_item_key = esc_attr( @$_POST['cart_item_key'] );
+	WC()->cart->remove_cart_item( $cart_item_key );
+	ob_start();
+	//template email
+	woocommerce_mini_cart();
+	//template email 
+	$mini_cart = ob_get_contents();
+	ob_end_clean();
+
+	ob_start();
+	//template email
+	echo WC()->cart->get_cart_contents_count();
+	//template email 
+	$number_cart = ob_get_contents();
+	ob_end_clean();
+
+	$output = array( 'status' => 'success', 'mini_cart' => $mini_cart, 'number_cart' => $number_cart );
+	echo json_encode( $output );
+	exit;
+}
+
 function _default() {
 
 }
@@ -155,11 +179,26 @@ add_action( 'wp_ajax_nopriv_mona_ajax_loading_filter', 'mona_ajax_loading_filter
 function mona_ajax_loading_filter() {
 	$form = array();
 	parse_str( $_POST['formdata'], $form );
+
+	$selected_filter = $_POST['filter'];
+
 	$car_brand = [];
 	$link      = get_permalink( MONA_WC_PRODUCTS );
+	if ( ! empty( $selected_filter ) ) {
+		if ( $selected_filter == 'car-brand' ) {
+			$term_brand = get_term_by( 'slug', $form['car-brand'], 'category_vehicle_brand' );
+			$link       = get_term_link( $term_brand->term_id, 'category_vehicle_brand' );
+		} else if ( $selected_filter == 'car-model' ) {
+			$term_model = get_term_by( 'slug', $form['car-model'], 'category_vehicle_brand' );
+			$link       = get_term_link( $term_model->term_id, 'category_vehicle_brand' );
+		} else if ( $selected_filter == 'car-year' ) {
+			$term_year = get_term_by( 'slug', $form['car-year'], 'category_vehicle_brand' );
+			$link      = get_term_link( $term_year->term_id, 'category_vehicle_brand' );
+
+		}
+	}
 	if ( isset( $form['car-brand'] ) && ! empty( $form['car-brand'] ) && $form['car-brand'] !== 'all' ) {
 		$term_brand = get_term_by( 'slug', $form['car-brand'], 'category_vehicle_brand' );
-		$link       = get_term_link( $term_brand->term_id, 'category_vehicle_brand' );
 		if ( ! empty( $term_brand ) ) {
 			$car_model = get_terms( array(
 				'taxonomy'   => 'category_vehicle_brand',
@@ -168,22 +207,19 @@ function mona_ajax_loading_filter() {
 			) );
 		}
 	}
-	if ( isset( $form['car-model'] ) && ! empty( $form['car-model'] ) && $form['car-model'] !== 'all' ) {
-		$term_model = get_term_by( 'slug', $form['car-model'], 'category_vehicle_brand' );
-		$link       = get_term_link( $term_model->term_id, 'category_vehicle_brand' );
 
-		if ( ! empty( $term_model ) ) {
-			$car_year = get_terms( array(
-				'taxonomy'   => 'category_vehicle_brand',
-				'hide_empty' => false,
-				'parent'     => $term_model->term_id
-			) );
+	if ( $selected_filter == 'car-model' || $selected_filter == 'car-year' ) {
+		if ( isset( $form['car-model'] ) && ! empty( $form['car-model'] ) && $form['car-model'] !== 'all' ) {
+			$term_model = get_term_by( 'slug', $form['car-model'], 'category_vehicle_brand' );
+
+			if ( ! empty( $term_model ) ) {
+				$car_year = get_terms( array(
+					'taxonomy'   => 'category_vehicle_brand',
+					'hide_empty' => false,
+					'parent'     => $term_model->term_id
+				) );
+			}
 		}
-	}
-
-	if ( isset( $form['car-year'] ) && ! empty( $form['car-year'] ) && $form['car-year'] !== 'all' ) {
-		$term_model = get_term_by( 'slug', $form['car-year'], 'category_vehicle_brand' );
-		$link       = get_term_link( $term_model->term_id, 'category_vehicle_brand' );
 	}
 
 
@@ -263,10 +299,11 @@ function mona_ajax_loading_filter() {
 
 	<?php
 
+
 	echo wp_send_json_success(
 		[
 			'title'         => __( 'Thông báo!', 'monamedia' ),
-			'message'       => __( 'Load thêm thành công!', 'monamedia' ),
+			'message'       => __( 'Đã load filter thành công', 'monamedia' ),
 			'title_close'   => __( 'Đóng', 'monamedia' ),
 			'products_html' => ob_get_clean()
 		]
